@@ -7,6 +7,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Notifikasi;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\RedirectResponse;
@@ -48,7 +49,8 @@ class PostController extends Controller
         'source'=>'required'
         ]);
         $image=$request->file('image');
-        $image-> storeAs('public/Post', $image->hashName());
+        $image->storeAs('Post', $image->hashName());
+        //$image-> storeAs('public/Post', $image->hashName());
 
         Post::create([
             'id_category'=>$request->id_category,
@@ -57,6 +59,11 @@ class PostController extends Controller
             'content'=>$request->content,
             'author'=>$request->author,
             'source'=>$request->source
+        ]);
+        notifikasi::create([
+            'id_user'=>$request->id_category,
+            'aksi'=>'Menambah Positingan',
+            'date'=>now()
         ]);
         return redirect('/post')->with('success',' successfull! ');
     }
@@ -94,8 +101,8 @@ class PostController extends Controller
             {
                 //upload new image
                 $image=$request->file('image');
-
-                $image->storeAs('public/Post',$image->hashName());
+                $image->storeAs('Post', $image->hashName());
+                //$image->storeAs('public/Post',$image->hashName());
 
 
                 //delete old image

@@ -44,7 +44,7 @@
                     <ul class="nav nav-collapse">
                     <li>
                         <a href="../demo1/index.html">
-                        <span class="sub-item">Dashboard 1</span>
+                        <span class="sub-item">Dashboard Utama</span>
                         </a>
                     </li>
                     </ul>
@@ -54,7 +54,7 @@
                 <span class="sidebar-mini-icon">
                     <i class="fa fa-ellipsis-h"></i>
                 </span>
-                <h4 class="text-section">Components</h4>
+                <h4 class="text-section">Menu</h4>
                 </li>
                 <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#base">
@@ -71,42 +71,42 @@
                     </li>
                     <li>
                         <a href="../../assets/admin/components/buttons.html">
-                        <span class="sub-item">Buttons</span>
+                        <span class="sub-item">Berita</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../assets/admin/components/gridsystem.html">
-                        <span class="sub-item">Grid System</span>
+                        <span class="sub-item">Kategori</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../assets/admin/components/panels.html">
-                        <span class="sub-item">Panels</span>
+                        <span class="sub-item">Produk</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../assets/admin/components/notifications.html">
-                        <span class="sub-item">Notifications</span>
+                        <span class="sub-item">Notifikasi</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../assets/admin/components/sweetalert.html">
-                        <span class="sub-item">Sweet Alert</span>
+                        <span class="sub-item">Aset Kantor</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../assets/admin/components/font-awesome-icons.html">
-                        <span class="sub-item">Font Awesome Icons</span>
+                        <span class="sub-item">Gudang</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../assets/admin/components/simple-line-icons.html">
-                        <span class="sub-item">Simple Line Icons</span>
+                        <span class="sub-item">Kategori Produk</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../assets/admin/components/typography.html">
-                        <span class="sub-item">Typography</span>
+                        <span class="sub-item">Pengguna</span>
                         </a>
                     </li>
                     </ul>
@@ -115,7 +115,7 @@
                 <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarLayouts">
                     <i class="fas fa-th-list"></i>
-                    <p>Sidebar Layouts</p>
+                    <p>Tampilan Menu</p>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse" id="sidebarLayouts">
@@ -143,7 +143,7 @@
                     <ul class="nav nav-collapse">
                     <li>
                         <a href="forms/forms.html">
-                        <span class="sub-item">Basic Form</span>
+                        <span class="sub-item">Form Standar</span>
                         </a>
                     </li>
                     </ul>
@@ -152,7 +152,7 @@
                 <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#tables">
                     <i class="fas fa-table"></i>
-                    <p>Tables</p>
+                    <p>Tabel</p>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse" id="tables">
@@ -173,7 +173,7 @@
                 <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#maps">
                     <i class="fas fa-map-marker-alt"></i>
-                    <p>Maps</p>
+                    <p>Peta</p>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse" id="maps">

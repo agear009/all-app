@@ -148,9 +148,9 @@
                           <tr>
                             <th scope="col">NO</th>
                             <th scope="col">Category</th>
-                            <th scope="left">Gambar</th>
+                            <th scope="col">Gambar</th>
                             <th scope="col">Title</th>
-                            <th scope="col">Source</th>
+                            <th scope="col">Author</th>
                             <th scope="col" class="text-end">Menu</th>
 
 
@@ -172,7 +172,7 @@
                             </th>
 
                             <th scope="col" width="">{{ $Post->id_category }}</th>
-                            <th scope="col" width=""><img src="{{ asset('storage/Post/'.$Post->image) }}" width="20%"></th>
+                            <th scope="col" width="20%"><img src="{{ asset('storage/Post/'.$Post->image) }}" width="20%"></th>
                             <th scope="col" width="">{{ $Post->title }}</th>
                             <th scope="col" width="">{{ $Post->author }}</th>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Nov 2024 pada 13.23
+-- Waktu pembuatan: 25 Nov 2024 pada 15.33
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -116,7 +116,21 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
-(4, '2024_11_15_132043_create_posts_table', 1);
+(4, '2024_11_15_132043_create_posts_table', 1),
+(5, '2024_11_24_115334_create_notifikasis_table', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `notifikasis`
+--
+
+CREATE TABLE `notifikasis` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `id_user` varchar(255) NOT NULL,
+  `aksi` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -155,7 +169,10 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`id`, `id_category`, `image`, `title`, `content`, `author`, `source`, `created_at`, `updated_at`) VALUES
 (2, 'Hot_News', 'ykfCon9gxcJkUHgbVQtnTglSKCEpYr14B9gFgXaU.jpg', 'title', '<p>content</p>', 'author', 'source', '2024-11-17 02:07:03', '2024-11-17 02:07:03'),
 (3, 'Otomotif', 'haUm1S9I8kVJHTr70afGms2Mpzl3BtMXwz68So96.jpg', '2', '<p>2</p>', '2', '2', '2024-11-17 02:45:16', '2024-11-17 02:45:16'),
-(4, 'Hot_News', 'mItwDNGD2cDDLxiUzfiG51jNtpbxLlieJTAhzGvd.jpg', '3', '<p>3</p>', '3', '3', '2024-11-17 04:32:47', '2024-11-17 04:32:47');
+(4, 'Hot_News', 'mItwDNGD2cDDLxiUzfiG51jNtpbxLlieJTAhzGvd.jpg', '3', '<p>3</p>', '3', '3', '2024-11-17 04:32:47', '2024-11-17 04:32:47'),
+(5, 'Hot_News', 'awUwAGc9WJqDDOPJarJ44zedhv0XlkYt5xT0pemV.png', 'judul', '<p>isi</p>', 'author3', 'source3', '2024-11-25 06:59:44', '2024-11-25 06:59:44'),
+(6, 'Hot_News', 'UjCYFRui8bvRZazUSYTZN0GfJgSCypTVZST1Ncsm.png', 'judul4', '<p>isi</p>', 'author4', 'source4', '2024-11-25 07:07:11', '2024-11-25 07:07:11'),
+(7, 'Hot_News', '5yGJu6DYfXmba44d4EDJ3PCgN7x2LKkmyQT97P7a.png', 'r', '<p>r</p>', 'r', 'r', '2024-11-25 07:22:33', '2024-11-25 07:22:33');
 
 -- --------------------------------------------------------
 
@@ -177,8 +194,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('B8dsnCQUfNioBSI3Fb1vgJLn9K4bvkkl1lfO5aUc', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWjMwU0hsckVkQTRhTGpQQ21uTk9oTEdlRGpuOThnclBVbVkwVUlZQSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0L2NyZWF0ZSI7fX0=', 1731818344),
-('f7jP1APiSb8E40nOmc4ExlcuRMUWZS7dYjOJDdeb', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRTJBU3AxcnM3ZHgyYlI3dGw4cWpXOFUxVUpkUDhLalFiSzNzZTlHbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1731843167);
+('qiwv7uCD77K1ucsrurKMArVsvcf23B7ExMX3LGYD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSE9tbFBKWUZBdHlhTkRZUXJaZWpoSExSb3JrcThwTm1hRldCaGhPdCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0L2NyZWF0ZSI7fX0=', 1732544554),
+('rBNJ7dGfPRasiDxWsDCkUcTrSpZEu1JzV9herwHb', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib2NzY2FuTFNQdDJYNUQySk1WcU15OTZ2NGRicmRZTnZtaFVaVFg5ViI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0Ijt9fQ==', 1732445016);
 
 -- --------------------------------------------------------
 
@@ -240,6 +257,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `notifikasis`
+--
+ALTER TABLE `notifikasis`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
@@ -286,13 +309,19 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `notifikasis`
+--
+ALTER TABLE `notifikasis`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
