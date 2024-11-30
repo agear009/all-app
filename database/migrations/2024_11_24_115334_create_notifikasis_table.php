@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('id_user');
             $table->string('aksi');
             $table->string('date');
+            $table->timestamps('');
         });
     }
 
