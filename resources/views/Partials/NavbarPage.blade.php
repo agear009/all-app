@@ -23,7 +23,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="../../assets/halaman_sdg/system.html" aria-label="A system message page">
+          <a class="nav-link fs-5" href="/login" aria-label="A system message page" target="blank">
             Login
           </a>
         </li>

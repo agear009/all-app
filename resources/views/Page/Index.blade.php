@@ -2,20 +2,23 @@
 
 @section('Container')
 
-<main>
+    <main>
     <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
       <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
       <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
         <div class="row d-flex align-items-center justify-content-center py-vh-5">
           <div class="col-12 col-xl-10">
             <span class="h5 text-secondary fw-lighter"></span>
-            <h1 class="display-huge mt-3 mb-3 lh-1">Selamat datang di PT saamparan Digital group</h1>
+            <h1 class="display-huge mt-3 mb-3 lh-1">Selamat datang di PT Saamparan Digital group</h1>
           </div>
           <div class="col-12 col-xl-8">
             <p class="lead text-secondary">Perusahaan terpercaya dalam bisnis Digital,sejak tahun 2023 kami berkomitment untuk menghadirkan solusi inovatif.</p>
           </div>
           <div class="col-12 text-center">
-            <a href="#" class="btn btn-xl btn-light">Join us
+
+
+
+            <a href="https://api.whatsapp.com/send?phone=6281214209177" class="btn btn-xl btn-light">Hubungi
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -33,7 +36,7 @@
         <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
         <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
           <div class="col-12 col-lg-6">
-            <img src="../../assets/halaman_sdg/_MACOSX/img/webp/rekber.jpeg" width="2280" height="1732" alt="Rekber "
+            <img src="{{ asset('../../assets/halaman_sdg/_MACOSX/img/webp/rekber.jpeg') }}" width="2280" height="1732" alt="Rekber "
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
           </div>
           <div class="col-12 col-md-6 col-lg-3">
@@ -41,7 +44,7 @@
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
           </div>
           <div class="col-12 col-md-6 col-lg-3">
-            <img src="../../assets/halaman_sdg/_MACOSX/img/webp/Digital Learning.jpeg" width="1116" height="848" alt="learning"
+            <img src="../../assets/halaman_sdg/_MACOSX/img/webp/DigitalLearning.jpeg" width="1116" height="848" alt="learning"
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
           </div>
         </div>

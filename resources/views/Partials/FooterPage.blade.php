@@ -3,7 +3,7 @@
     <div class="container py-vh-4 text-secondary fw-lighter">
       <div class="row">
         <div class="col-12 col-lg-5 py-4 text-center text-lg-start">
-          <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+          <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="../../assets/halaman_sdg/index.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
               viewBox="0 0 16 16">
               <path
@@ -29,49 +29,40 @@
               <a href="#" class="link-fancy link-fancy-light">Karir</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Kontak</a>
+              <a href="#" class="link-fancy link-fancy-light"></a>
             </li>
           </ul>
         </div>
         <div class="col border-end border-dark">
-          <span class="h6">Services</span>
+          <span class="h6">Layanan</span>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Pricing</a>
+              <a href="#" class="link-fancy link-fancy-light">Transaksi Sosmed</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Products</a>
+              <a href="#" class="link-fancy link-fancy-light">Rekening Bersama</a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Customers</a>
+              <a href="#" class="link-fancy link-fancy-light">Agregator Musik</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Portfolio</a>
+              <a href="#" class="link-fancy link-fancy-light">Web Developer</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Success Stories</a>
+              <a href="#" class="link-fancy link-fancy-light">Desain marketing</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">More</a>
+              <a href="#" class="link-fancy link-fancy-light">Digital Learning</a>
             </li>
           </ul>
         </div>
         <div class="col">
           <span class="h6">Support</span>
           <ul class="nav flex-column">
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
-            </li>
 
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
+              <a href="#" class="link-fancy link-fancy-light">Kontak</a>
             </li>
           </ul>
         </div>
