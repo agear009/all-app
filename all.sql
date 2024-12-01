@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Nov 2024 pada 15.33
+-- Waktu pembuatan: 01 Des 2024 pada 07.02
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -117,7 +117,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
 (4, '2024_11_15_132043_create_posts_table', 1),
-(5, '2024_11_24_115334_create_notifikasis_table', 2);
+(5, '2024_11_24_115334_create_notifikasis_table', 1);
 
 -- --------------------------------------------------------
 
@@ -129,8 +129,17 @@ CREATE TABLE `notifikasis` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `id_user` varchar(255) NOT NULL,
   `aksi` varchar(255) NOT NULL,
-  `date` varchar(255) NOT NULL
+  `date` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `notifikasis`
+--
+
+INSERT INTO `notifikasis` (`id`, `id_user`, `aksi`, `date`, `created_at`, `updated_at`) VALUES
+(1, 'Hot_News', 'Menambah Positingan', '2024-11-30 03:01:17', '2024-11-29 20:01:17', '2024-11-29 20:01:17');
 
 -- --------------------------------------------------------
 
@@ -167,12 +176,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `id_category`, `image`, `title`, `content`, `author`, `source`, `created_at`, `updated_at`) VALUES
-(2, 'Hot_News', 'ykfCon9gxcJkUHgbVQtnTglSKCEpYr14B9gFgXaU.jpg', 'title', '<p>content</p>', 'author', 'source', '2024-11-17 02:07:03', '2024-11-17 02:07:03'),
-(3, 'Otomotif', 'haUm1S9I8kVJHTr70afGms2Mpzl3BtMXwz68So96.jpg', '2', '<p>2</p>', '2', '2', '2024-11-17 02:45:16', '2024-11-17 02:45:16'),
-(4, 'Hot_News', 'mItwDNGD2cDDLxiUzfiG51jNtpbxLlieJTAhzGvd.jpg', '3', '<p>3</p>', '3', '3', '2024-11-17 04:32:47', '2024-11-17 04:32:47'),
-(5, 'Hot_News', 'awUwAGc9WJqDDOPJarJ44zedhv0XlkYt5xT0pemV.png', 'judul', '<p>isi</p>', 'author3', 'source3', '2024-11-25 06:59:44', '2024-11-25 06:59:44'),
-(6, 'Hot_News', 'UjCYFRui8bvRZazUSYTZN0GfJgSCypTVZST1Ncsm.png', 'judul4', '<p>isi</p>', 'author4', 'source4', '2024-11-25 07:07:11', '2024-11-25 07:07:11'),
-(7, 'Hot_News', '5yGJu6DYfXmba44d4EDJ3PCgN7x2LKkmyQT97P7a.png', 'r', '<p>r</p>', 'r', 'r', '2024-11-25 07:22:33', '2024-11-25 07:22:33');
+(1, 'Hot_News', 'LYZZ1AKJftDQItOhosKfoyIAzQ75A32diDoKooSg.jpg', 'baru', '<p>baru</p>', 'baru', 'baru', '2024-11-29 20:01:17', '2024-11-29 20:01:17');
 
 -- --------------------------------------------------------
 
@@ -194,8 +198,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('qiwv7uCD77K1ucsrurKMArVsvcf23B7ExMX3LGYD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSE9tbFBKWUZBdHlhTkRZUXJaZWpoSExSb3JrcThwTm1hRldCaGhPdCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0L2NyZWF0ZSI7fX0=', 1732544554),
-('rBNJ7dGfPRasiDxWsDCkUcTrSpZEu1JzV9herwHb', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib2NzY2FuTFNQdDJYNUQySk1WcU15OTZ2NGRicmRZTnZtaFVaVFg5ViI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0Ijt9fQ==', 1732445016);
+('k0gIDBEMoAIlJUnMPYKLZzfYY1etDmNOcWYuXC5D', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUFBPYzd2UHhDVVRwYjlBVHNkQ0ttMkthbGRkVngwbjNHRnFMSHBvSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wYWdlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1733032739);
 
 -- --------------------------------------------------------
 
@@ -315,13 +318,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `notifikasis`
 --
 ALTER TABLE `notifikasis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

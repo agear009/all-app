@@ -11,25 +11,25 @@
               <path
                 d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
             </svg>
-            <span class="ms-md-1 mt-1 fw-bolder me-md-5">Klar</span>
+            <span class="ms-md-1 mt-1 fw-bolder me-md-5">PT Saamparan Digital Group</span>
           </a>
 
         </div>
         <div class="col border-end border-dark">
-          <span class="h6">Company</span>
+          <span class="h6">Perusahaan</span>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
+              <a href="#" class="link-fancy link-fancy-light">Tentang</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
+              <a href="#" class="link-fancy link-fancy-light">Legalitas</a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
+              <a href="#" class="link-fancy link-fancy-light">Karir</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
+              <a href="#" class="link-fancy link-fancy-light">Kontak</a>
             </li>
           </ul>
         </div>
@@ -83,8 +83,8 @@
     </div>
   </footer>
 
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="../../assets/halaman_sdg/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/halaman_sdg/js/aos.js"></script>
   <script>
     AOS.init({
       duration: 800, // values from 0 to 3000, with step 50ms
