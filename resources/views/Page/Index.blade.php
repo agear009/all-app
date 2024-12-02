@@ -18,7 +18,7 @@
 
 
 
-            <a href="https://api.whatsapp.com/send?phone=6281214209177" class="btn btn-xl btn-light">Hubungi
+            <a href="https://api.whatsapp.com/send?phone=6281214209177" class="btn btn-xl btn-light" target="blank">Hubungi
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -36,15 +36,15 @@
         <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
         <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
           <div class="col-12 col-lg-6">
-            <img src="{{ asset('../../assets/halaman_sdg/_MACOSX/img/webp/rekber.jpeg') }}" width="2280" height="1732" alt="Rekber "
+            <img src="{{asset('assets/halaman_sdg/img/webp/rekber.jpeg')}}" width="2280" height="1732" alt="Rekber "
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
           </div>
           <div class="col-12 col-md-6 col-lg-3">
-            <img src="../../assets/halaman_sdg/_MACOSX/img/webp/agregator.jpeg" width="1116" height="1578" alt="Agregator "
+            <img src="../../assets/halaman_sdg/img/webp/agregator.jpeg" width="1116" height="1578" alt="Agregator "
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
           </div>
           <div class="col-12 col-md-6 col-lg-3">
-            <img src="../../assets/halaman_sdg/_MACOSX/img/webp/DigitalLearning.jpeg" width="1116" height="848" alt="learning"
+            <img src="../../assets/halaman_sdg/img/webp/DigitalLearning.jpeg" width="1116" height="848" alt="learning"
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
           </div>
         </div>
@@ -54,30 +54,26 @@
       <div class="container px-vw-5 py-vh-5">
         <div class="row d-flex align-items-center">
           <div class="col-12 col-lg-7 text-lg-end" data-aos="fade-right">
-            <span class="h5 text-secondary fw-lighter">What we do</span>
-            <h2 class="display-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h2>
+            <span class="h5 text-secondary fw-lighter">PT Saamparan Digital Group</span>
+            <h2 class="display-4">di sahkan pada tanggal 18 Desember 2023 , Bergerak di bidang  Penyedia Jasa Digital Untuk Akselerasi Bisnis, Perorangan, Perusahaan. Profesionalitas menjadi nilai yang selalu menuntun kami untuk dapat memberikan yang terbaik untuk klien.
+            </h2>
           </div>
           <div class="col-12 col-lg-5" data-aos="fade-left">
-            <h3 class="pt-5">Product Design & Strategy</h3>
-            <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-              </svg>
+            <h3 class="pt-5">VISI</h3>
+            <p class="text-secondary">Perusaahaan Digital yang meraih suskses kelas dunia.<br>
+
             </p>
-            <h3 class="border-top border-secondary pt-5 mt-5">Development & Engineering</h3>
-            <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-              </svg>
+            <h3 class="border-top border-secondary pt-5 mt-5">MISI</h3>
+            <p class="text-secondary">1.	Selalu mengutamakan dan memberikan kemudahan kepada semua klien yang memakai jasa perusahaan.<br>
+            2.	Sebagai Rool Model Perusahan yang bergerak di bidang digital dan menjadi percontohan bagi  Perusahan Perusahan yang mulai merintis di bidang yang sama.<br>
+            3.	Perusahan yang mempunyai projeck projeck di bidang digital yang bisa memberikan peluang bisnis untuk masyarakat.<br>
+            4.	Perusahan yang terus berkembang dan terupdate dalam bidang media sosial dan digital.<br>
+            5.	Perusahaan yang selalu mejungjung tinggi profesionalitas dalam memberikan pelayan kepada klien.<br>
+            6.	Selalu Mengutamakan Kesejahteraan Karyawan agar tercipta suasana yang baik sehingga    karyawan bekerja secara profesional.<br>
+            7.	Selalu melaksanan Evaluasi sebagai acuan untuk meningkatkan kwalitas perusahaan.<br>
+            8.	Bekerja dengan juju dan amanah.<br>
+            <a href="#" class="link-fancy link-fancy-light me-2"></a>
+
             </p>
           </div>
         </div>
@@ -91,58 +87,85 @@
           <div class="col-12 col-md-6">
             <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../assets/halaman_sdg/_MACOSX/img/webp/rekber.jpeg" width="582" height="327" alt="rekber"
+                <img src="{{asset('assets/halaman_sdg/img/webp/rekber.jpeg')}}" width="582" height="327" alt="rekber"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
                   <h2 class="fw-lighter">JASA PENGAMANAN TRANSAKSI</h2>
                   <p class="pb-4 text-secondary">JASA PENGAMANAN TRANSAKSI MEDIA SOSIAL BAIK FB,TIKTOK,YOUTOBE,IG DAN LAINYA</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                  <a href="#" class="link-fancy link-fancy-light"></a>
                 </div>
               </div>
             </div>
 
             <div class="card bg-transparent" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../assets/halaman_sdg/_MACOSX/img/webp/abstract2.webp" width="582" height="442" alt="abstract image"
+                <img src="{{asset('assets/halaman_sdg/img/webp/agregator.jpeg')}}" width="582" height="442" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">JASA PENGAMANAN TRANSAKSI MEDIA SOSIAL BAIK FB,TIKTOK,YOUTOBE,IG DAN LAINYA</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                  <h2 class="fw-lighter">Agregator Musik</h2>
+                  <p class="pb-4 text-secondary">MEMBANTU MENDISTRIBUSIKAN MUSIK ANDA KE PLATFORM STREMING SEPERTI YOUTOBE,YOUTOBE STUDIO,SPOTIFITY,JOOX DAN STRIMING MUSIK LAINYA</p>
+                  <a href="#" class="link-fancy link-fancy-light"></a>
                 </div>
               </div>
+                </div>
+
+
+            <div class="card bg-transparent" data-aos="zoom-in-up">
+                <div class="bg-dark shadow rounded-5 p-0">
+                  <img src="{{asset('assets/halaman_sdg/img/webp/desain.jpeg')}}" width="582" height="442" alt="abstract image"
+                    class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                  <div class="p-5">
+                    <h2 class="fw-lighter">DESIGN FOR DIGITAL </h2>
+                    <p class="pb-4 text-secondary">MEDIA YAITU SEBAGAI JASA PEMBUAT KONTEN DALAM BENTUK GAMBAR ATAU VIDIO UNTUK MARKETING BISNIS</p>
+                    <a href="#" class="link-fancy link-fancy-light"></a>
+                  </div>
+                </div>
+                  </div>
+
             </div>
-          </div>
+
           <div class="col-12 col-md-6">
             <div class="p-5 pt-0 mt-5" data-aos="fade">
               <span class="h5 text-secondary fw-lighter">LAYANAN PERUSAHAAN SAAMPARAN DIGITAL GROUP</span>
-              <h2 class="display-4">There is a lot we don´t know. Here is a small sneak peek</h2>
+              <h2 class="display-4">PENGELOLAAN MEDIA</h2>
             </div>
             <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../assets/halaman_sdg/_MACOSX/img/webp/abstract17.webp" width="582" height="390" alt="abstract image"
+                <img src="{{asset('assets/halaman_sdg/img/webp/managemensosialmedia.jpeg')}}" width="582" height="390" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                  <h2 class="fw-lighter">MANAJEMEN MEDIA</h2>
+                  <p class="pb-4 text-secondary">SOSIAL,DIGITAL MARKETING,JASA PEMBAYARAN ONLINE(REKBER).
+                  </p>
+                  <a href="#" class="link-fancy link-fancy-light"></a>
                 </div>
               </div>
             </div>
 
             <div class="card bg-transparent" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="../../assets/halaman_sdg/_MACOSX/img/webp/abstract4.webp" width="582" height="327" alt="abstract image"
+                <img src="{{asset('assets/halaman_sdg/img/webp/it.jpeg')}}" width="582" height="327" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                  <h2 class="fw-lighter">IT & SOFTWARE </h2>
+                  <p class="pb-4 text-secondary">JASA WEBSITE COMPANY PROFILE HINGGA E-COMMERCE DAN LAYANAN SISTEM UNTUK MENDUKUNG BISNIS </p>
+                  <a href="#" class="link-fancy link-fancy-light"></a>
                 </div>
               </div>
             </div>
+
+            <div class="card bg-transparent" data-aos="zoom-in-up">
+                <div class="bg-dark shadow rounded-5 p-0">
+                  <img src="{{asset('assets/halaman_sdg/img/webp/learning.jpeg')}}" width="582" height="327" alt="abstract image"
+                    class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                  <div class="p-5">
+                    <h2 class="fw-lighter">DIGITAL LEARNING  </h2>
+                    <p class="pb-4 text-secondary">TEMPAT BELAJAR DALAM BIDANG DIGITAL DAN MEDIA SOSIAL SEBAGAI KONTEN KREATOR SECARA CEPAT ,TEPAT,DAN AKURAT </p>
+                    <a href="#" class="link-fancy link-fancy-light"></a>
+                  </div>
+                </div>
+              </div>
+
           </div>
         </div>
 
@@ -154,14 +177,24 @@
         <div class="row d-flex align-items-center">
 
           <div class="col-12 col-lg-7">
-            <img class="img-fluid rounded-5 mb-n5 shadow" src="../../assets/halaman_sdg/_MACOSX/img/webp/person9.webp" width="512" height="512"
+            <img class="img-fluid rounded-5 mb-n5 shadow" src="{{asset('assets/halaman_sdg/img/webp/jualakun1.jpeg')}}" width="512" height="512"
               alt="a nice person" loading="lazy" data-aos="zoom-in-right">
-            <img class="img-fluid rounded-5 ms-5 mb-n5 shadow" src="../../assets/halaman_sdg/_MACOSX/img/webp/person11.webp" width="512" height="512"
+            <img class="img-fluid rounded-5 ms-5 mb-n5 shadow" src="{{asset('assets/halaman_sdg/img/webp/jualakun2.jpeg')}}" width="512" height="512"
               alt="another nice person" loading="lazy" data-aos="zoom-in-up">
           </div>
           <div class="col-12 col-lg-5 bg-dark rounded-5 py-5" data-aos="fade">
-            <span class="h5 text-secondary fw-lighter">Do you like faces?</span>
-            <h2 class="display-4">We constantly adding new images to our website. Does it make sense? No!</h2>
+            <span class="h5 text-secondary fw-lighter">Ingin Mengelola Akun YouTube ?</span>
+            <h2 class="display-4">Kami menyediakan Akun Youtube yang sudah monetisasi dan telah menhasilkan cuan<br>
+
+                <a href="https://api.whatsapp.com/send?phone=6281214209177" class="btn btn-xl btn-light" target="blank">Hubungi
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                    </svg>
+                  </a>
+
+            </h2>
           </div>
         </div>
       </div>
@@ -197,14 +230,14 @@
     <div class="container-fluid px-vw-5 position-relative" data-aos="fade">
       <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
       <div class="position-relative py-vh-5 bg-cover bg-center rounded-5"
-        style="background-image: url(../../assets/halaman_sdg/_MACOSX/img/webp/abstract12.webp)">
+        style="background-image: url({{asset('assets/halaman_sdg/img/webp/rekber.jpeg')}})">
         <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
           <div class="row d-flex align-items-center">
 
             <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
               <div class="row d-flex justify-content-center">
                 <div class="col-12">
-                  <img src="../../assets/halaman_sdg/_MACOSX/img/webp/person103.webp" width="684" height="457" alt="our CEO with some nice numbers"
+                  <img src="{{asset('assets/halaman_sdg/img/webp/rekber.jpeg')}}" width="684" height="457" alt="our CEO with some nice numbers"
                     class="img-fluid rounded-5" loading="lazy">
                 </div>
                 <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
@@ -283,7 +316,7 @@
               <p class="text-secondary lead">"Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore et
                 dolore magna aliqua ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
               <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
-                <img src="../../assets/halaman_sdg/_MACOSX/img/webp/person14.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
+                <img src="{{asset('assets/halaman_sdg/img/webp/rekber.jpeg')}}" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Jane Doemunsky</span><br>
@@ -332,7 +365,7 @@
                 dolore magna aliqua. Ut enim ad minim veniam. quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat."</p>
               <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
-                <img src="../../assets/halaman_sdg/_MACOSX/img/webp/person13.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
+                <img src="../../assets/halaman_sdg/img/webp/person13.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Jane Doemunsky</span><br>
@@ -389,7 +422,7 @@
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat."</p>
               <div class="d-flex justify-content-start align-items-center border-top pt-3">
-                <img src="../../assets/halaman_sdg/_MACOSX/img/webp/person16.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
+                <img src="../../assets/halaman_sdg/img/webp/person16.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Jane Doemunsky</span><br>

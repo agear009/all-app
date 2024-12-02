@@ -44,7 +44,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Agregator Musik</a>
+              <a href="www.sdgmusik.com" class="link-fancy link-fancy-light" target="blank">Agregator Musik</a>
             </li>
             <li class="nav-item">
               <a href="#" class="link-fancy link-fancy-light">Web Developer</a>
@@ -68,9 +68,9 @@
         </div>
       </div>
     </div>
-    <div class="container text-center small py-vh-2 border-top border-dark">Made by
-      <a href="https://templatedeck.com" class="link-fancy link-fancy-light" target="_blank">templatedeck.com</a>
-      Distributed by <a href="https://themewagon.com" class="link-fancy link-fancy-light" target="_blank">ThemeWagon</a>
+    <div class="container text-center small py-vh-2 border-top border-dark">
+      <a href="#" class="link-fancy link-fancy-light" target="_blank">Saamparan Digital Group</a>
+     <a href="#" class="link-fancy link-fancy-light" target="_blank"></a>
     </div>
   </footer>
 
