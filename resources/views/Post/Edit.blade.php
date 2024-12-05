@@ -167,21 +167,21 @@
                           <tr>
                             <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Category</label>
-                                <select class="form-control" id="category_id" name="category_id" aria-describedby="category_id" value="{{ $Post->category_id }}" required >
-                                    <option name="category_id" value="{{ $Post->id_category }}">{{ $Post->id_category }}</option>
-                                    <option name="category_id" value="Hot_News">Viral</option>
-                                    <option name="category_id" value="Teknologi">Teknologi</option>
-                                    <option name="category_id" value="Edukasi">Edukasi</option>
-                                    <option name="category_id" value="Politik">Politik</option>
-                                    <option name="category_id" value="Olah_Raga">Olah Raga</option>
-                                    <option name="category_id" value="Wisata">Wisata</option>
-                                    <option name="category_id" value="Manca_Negara">Manca Negara</option>
-                                    <option name="category_id" value="Kesehatan">Kesehatan</option>
-                                    <option name="category_id" value="Gaya Hidup">Gaya Hidup</option>
-                                    <option name="category_id" value="Kuliner">Kuliner</option>
-                                    <option name="category_id" value="Otomotif">Otomotif</option>
-                                    <option name="category_id" value="Sejarah">Sejarah</option>
-                                    <option name="category_id" value="Film">Film</option>
+                                <select class="form-control" id="id_category" name="id_category" aria-describedby="id_category" required >
+                                    <option name="id_category" value="{{ $Post->id_category }}">{{ $Post->id_category }}</option>
+                                    <option name="id_category" value="Viral">Viral</option>
+                                    <option name="id_category" value="Teknologi">Teknologi</option>
+                                    <option name="id_category" value="Edukasi">Edukasi</option>
+                                    <option name="id_category" value="Politik">Politik</option>
+                                    <option name="id_category" value="Olah Raga">Olah Raga</option>
+                                    <option name="id_category" value="Wisata">Wisata</option>
+                                    <option name="id_category" value="Manca Negara">Manca Negara</option>
+                                    <option name="id_category" value="Kesehatan">Kesehatan</option>
+                                    <option name="id_category" value="Gaya Hidup">Gaya Hidup</option>
+                                    <option name="id_category" value="Kuliner">Kuliner</option>
+                                    <option name="id_category" value="Otomotif">Otomotif</option>
+                                    <option name="id_category" value="Sejarah">Sejarah</option>
+                                    <option name="id_category" value="Film">Film</option>
 
                                 </select>
 

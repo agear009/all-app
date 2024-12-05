@@ -70,7 +70,7 @@ class PostController extends Controller
 
     public function edit(string $id)
     {
-        $Post=Post::findOrFail($id);
+        $Post=post::findOrFail($id);
         return view('Post.Edit',["title"=>"Post","active"=>"Edit"],compact('Post'));
     }
 
@@ -86,7 +86,7 @@ class PostController extends Controller
 
 
         ]);
-            //dd($request);
+            dd($request);
             $Post=post::FindOrFail($id);
 
             if($request->hasFile('image'))
@@ -102,7 +102,7 @@ class PostController extends Controller
 
                 //update Post with new image
                 $Post->update([
-                    'category_id'=>$request->category_id,
+                    'id_category'=>$request->id_category,
                     'image'=>$image->hashName(),
                     'title'=>$request->title,
                     'content'=>$request->content,
@@ -131,7 +131,7 @@ class PostController extends Controller
 
     public function destroy(string $id)
     {
-        $Post=Post::findOrFail($id);
+        $Post=post::findOrFail($id);
 
         //delete image
            //delete old image
