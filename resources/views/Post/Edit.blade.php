@@ -191,7 +191,7 @@
                             <th scope="row" colspan="6">
                             <label for="exampleInputname1" class="form-label">Gambar</label><br>
                             <img src="{{ asset('storage/Post/'.$Post->image) }}" width="20%">
-                            <input type="file" class="form-control" id="name" name="image_cover_id" aria-describedby="Cover" value="{{ $Post->image }}">
+                            <input type="file" class="form-control" id="name" name="image" aria-describedby="Cover" value="{{ $Post->image }}">
 
                             </th>
                           </tr>

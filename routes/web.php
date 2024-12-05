@@ -8,9 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
 Route::get('/admin',[UsersController::class,'index']);
-Route::get('/post',[PostController::class,'index']);
 Route::get('/page',[PageController::class,'index']);
-Route::get('/login',[LoginController::class,'index']);
 Route::get('/login',[LoginController::class,'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);

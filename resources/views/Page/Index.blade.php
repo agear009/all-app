@@ -204,18 +204,16 @@
       <div class="container px-vw-5 py-vh-5">
         <div class="row d-flex align-items-center">
           <div class="col-12 col-lg-5 text-center text-lg-end" data-aos="zoom-in-right">
-            <span class="h5 text-secondary fw-lighter">What we charge</span>
-            <h2 class="display-4">You get all our knowledge for one simple price</h2>
+            <span class="h5 text-secondary fw-lighter">Kenapa harus daftar lagu secepatnya?</span>
+            <h2 class="display-4">Segara daftarkan musik anda dengan promo harga yang ramah dikantong</h2>
           </div>
           <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5" data-aos="zoom-in-up">
             <h2 class="display-huge mb-5">
-              <span class="fs-4 me-2 fw-light">$</span><span class="border-bottom border-5">499</span><span
-                class="fs-6 fw-light">/day</span>
+              <span class="fs-4 me-2 fw-light">Rp</span><span class="border-bottom border-5">0</span><span
+                class="fs-6 fw-light">/ selama waktu promo</span>
             </h2>
-            <p class="lead text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="#" class="btn btn-xl btn-light">Sign up
+            <p class="lead text-secondary">Yu mumpung masih promo daftarin lagu kamu secepatnya promo gak bakalan lama loh, lama atau berakhirnya promo akan di atur oleh perusahaan.</p>
+            <a href="#" class="btn btn-xl btn-light">Daftar
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -237,33 +235,25 @@
             <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
               <div class="row d-flex justify-content-center">
                 <div class="col-12">
-                  <img src="{{asset('assets/halaman_sdg/img/webp/rekber.jpeg')}}" width="684" height="457" alt="our CEO with some nice numbers"
+                  <img src="{{asset('assets/halaman_sdg/img/webp/jualakun1.jpeg')}}" width="684" height="457" alt="our CEO with some nice numbers"
                     class="img-fluid rounded-5" loading="lazy">
                 </div>
                 <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
-                  <p class="lead border-bottom pb-4 border-secondary">"Lorem ipsum dolor sit amet, consetetur sadipscing
-                    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                    takimata sanctus est Lorem ipsum dolor sit amet."</p>
-                  <p class="text-secondary text-center">Jane Doe, CEO</p>
+                  <p class="lead border-bottom pb-4 border-secondary">"Kenapa membeli akun YouTube di tempat kami adalah pilihan terbaik? Karena kami menawarkan akun yang aman, terpercaya, dan 100% original, dengan proses yang cepat dan mudah. Kami menjaga kualitas layanan dan memastikan setiap transaksi dilindungi sepenuhnya, memberikan Anda kenyamanan tanpa khawatir. Apakah Anda ingin mengeksplorasi lebih lanjut tentang keamanan dan manfaatnya?."</p>
+                  <p class="text-secondary text-center">PT Saamparan Digital Group</p>
                 </div>
               </div>
             </div>
             <div class="col-5 offset-1">
-              <span class="h5 text-secondary fw-lighter">The numbers</span>
-              <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">+400</h2>
+              <span class="h5 text-secondary fw-lighter">Pembeli</span>
+              <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">+171</h2>
               <p class="h4 fw-lighter text-secondary">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                Sudah banyak yang membeli akun youtube dari perusahaan kami.
               </p>
 
-              <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">78.981
-              </h2>
+              <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">100%</h2>
               <p class="h4 fw-lighter text-secondary">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-              </p>
-              <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">98%</h2>
-              <p class="h4 fw-lighter text-secondary">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                Respon yang kami terima  puas dengan pelayanan kami.
               </p>
             </div>
           </div>

@@ -76,10 +76,9 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $request->validate([
 
         'category_id'=>'required|max:255',
-        'image_image_id'=>'max:255',
         'title'=>'required|max:255',
         'content'=>'required',
         'author'=>'required|max:255',
@@ -87,13 +86,6 @@ class PostController extends Controller
 
 
         ]);
-
-            $this->validate($request,[
-
-                'namePost'=>'required|max:255',
-
-
-            ]);
             //dd($request);
             $Post=post::FindOrFail($id);
 
@@ -142,7 +134,8 @@ class PostController extends Controller
         $Post=Post::findOrFail($id);
 
         //delete image
-
+           //delete old image
+           Storage::delete('public/Post/'.$Post->image);
 
 
         // delete member
