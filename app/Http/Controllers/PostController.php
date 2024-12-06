@@ -78,7 +78,7 @@ class PostController extends Controller
     {
         $request->validate([
 
-        'category_id'=>'required|max:255',
+        'id_category'=>'required|max:255',
         'title'=>'required|max:255',
         'content'=>'required',
         'author'=>'required|max:255',
@@ -86,11 +86,12 @@ class PostController extends Controller
 
 
         ]);
-            dd($request);
+           // dd($request);
             $Post=post::FindOrFail($id);
 
             if($request->hasFile('image'))
             {
+                //dd($request);
                 //upload new image
                 $image=$request->file('image');
                 $image->storeAs('Post', $image->hashName());
@@ -116,7 +117,7 @@ class PostController extends Controller
             else
             {
                 $Post->update([
-                    'category_id'=>$request->category_id,
+                    'id_category'=>$request->id_category,
                     'title'=>$request->title,
                     'content'=>$request->content,
                     'author'=>$request->author,
