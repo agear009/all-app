@@ -99,6 +99,7 @@ class PostController extends Controller
 
 
                 //delete old image
+                //dd(Storage::delete('public/Post/'.$Post->image));
                 Storage::delete('public/Post/'.$Post->image);
 
                 //update Post with new image
