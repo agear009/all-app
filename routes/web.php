@@ -11,10 +11,17 @@ Route::get('/index', function () {
     return view('welcome');
 });
 
-Route::get('/admin',[UsersController::class,'index']);
 Route::get('/',[PageController::class,'index']);
 Route::get('/produk',[PageController::class,'produk']);
 Route::get('/login',[LoginController::class,'index']);
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/login-check', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+Route::resource('/register',\App\Http\Controllers\RegisterController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);
+
+
+Route::group(["middleware"=>["auth"]],function(){
+
+Route::get('/admin',[UsersController::class,'index']);
+
+});

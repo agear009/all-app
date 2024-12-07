@@ -4,15 +4,15 @@
   <head>
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+  <meta name="description" content="login">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
+  <link rel="icon" type="image/ico" sizes="32x32" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
+  <link rel="icon" type="image/ico" sizes="16x16" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
+  <link rel="icon" type="image/ico" sizes="96x96" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
-  <title>Register a new account</title>
+  <title>Login / Daftar</title>
   <link rel="stylesheet" href="../../assets/halaman_sdg/css/theme.min.css">
 
 
@@ -39,16 +39,17 @@
               <h1>Masuk akun</h1>
 
 
-<form action="login-check" method="POST" class="row">
+<form action="/login-check" method="POST" class="row">
+    @csrf
   <div class="col-12">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" name="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">Silahkan masukan email anda</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
-    <input type="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
+    <input type="password" name="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
   </div>
   <div class="mb-3 form-check py-3">
     <label class="form-check-label" for="exampleCheck1">Silahkan masukan email dan pasword anda dan apabila anda belum mendaftar tolong daftarkan diri anda terlebih dahulu.
@@ -67,7 +68,7 @@
             </main>
           </div>
 
-            <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient"><img src="{{asset('assets/halaman_sdg/img/webp/sdg.png')}}"></div>
+            <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient"><center><img src="{{asset('assets/halaman_sdg/img/webp/sdg.png')}}"></center></div>
 
         </div>
 

@@ -1,12 +1,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/halaman_sdg/_MACOSX/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/halaman_sdg/_MACOSX/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/halaman_sdg/_MACOSX/img/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/halaman_sdg/_MACOSX/img/favicon.png">
-    <meta name="author" content="Holger Koenemann">
+    <meta name="description" content="Saamparan Digital Group">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
+    <link rel="icon" type="image/ico" sizes="32x32" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
+    <link rel="icon" type="image/ico" sizes="16x16" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
+    <link rel="icon" type="image/ico" sizes="96x96" href="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}">
+    <meta name="author" content="sdg">
     <meta name="generator" content="Eleventy v2.0.0">
     <meta name="HandheldFriendly" content="true">
     <title>PT Saamparan Digital Group</title>

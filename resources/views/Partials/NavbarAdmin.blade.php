@@ -4,7 +4,7 @@
       <div class="logo-header" data-background-color="dark">
         <a href="index.html" class="logo">
           <img
-            src="../../assets/admin/assets/img/kaiadmin/logo_light.svg"
+            src="{{asset('assets/halaman_sdg/img/webp/sdg.ico')}}"
             alt="navbar brand"
             class="navbar-brand"
             height="20"
@@ -363,13 +363,16 @@
                 </li>
                 <li>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">My Profile</a>
-                  <a class="dropdown-item" href="#">My Balance</a>
-                  <a class="dropdown-item" href="#">Inbox</a>
+                  <a class="dropdown-item" href="#"></a>
+                  <a class="dropdown-item" href="#"></a>
+                  <a class="dropdown-item" href="#"></a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Account Setting</a>
+                  <a class="dropdown-item" href="#"></a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <form action="/logout" method="POST">
+                    @csrf
+                    <li class="dropdown-item">  <button type="submit" class="nav-link bi bi-box-arrow-right {{ ($active==="logout")?'active':'' }}"> Logout</button></li>
+                </form>
                 </li>
               </div>
             </ul>

@@ -46,7 +46,6 @@
 
   <body>
 
-        @include('Partials.HeaderAdmin')
 
         @include('Partials.SidebarAdmin')
 

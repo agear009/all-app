@@ -3,7 +3,7 @@
     <div class="container py-vh-4 text-secondary fw-lighter">
       <div class="row">
         <div class="col-12 col-lg-5 py-4 text-center text-lg-start">
-          <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="../../assets/halaman_sdg/index.html">
+          <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="/">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
               viewBox="0 0 16 16">
               <path
@@ -62,7 +62,8 @@
           <ul class="nav flex-column">
 
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Kontak</a>
+
+              <a href="https://api.whatsapp.com/send?phone=6281214209177" target="blank" class="link-fancy link-fancy-light">Kontak</a>
             </li>
           </ul>
         </div>
