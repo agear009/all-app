@@ -13,12 +13,12 @@
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
         <li class="nav-item">
-          <a class="nav-link fs-5" href="../../assets/halaman_sdg/index.html" aria-label="Beranda">
+          <a class="nav-link fs-5" href="/" aria-label="Beranda">
             Beranda
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="../../assets/halaman_sdg/content.html" aria-label="A sample content page">
+          <a class="nav-link fs-5" href="/produk" aria-label="Produk">
             Produk
           </a>
         </li>
@@ -29,9 +29,6 @@
         </li>
 
       </ul>
-      <a href="https://templatedeck.com/klar-html-template.html" aria-label="Download this template"
-        class="btn btn-outline-light">
-        <small>Daftar</small>
-      </a>
+
     </div>
   </nav>

@@ -13,6 +13,7 @@ Route::get('/index', function () {
 
 Route::get('/admin',[UsersController::class,'index']);
 Route::get('/',[PageController::class,'index']);
+Route::get('/produk',[PageController::class,'produk']);
 Route::get('/login',[LoginController::class,'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);

@@ -67,7 +67,7 @@
             </main>
           </div>
 
-            <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient"><img src="../../assets/halaman_sdg/_MACOSX/img/webp/sdg.png"></div>
+            <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient"><img src="{{asset('assets/halaman_sdg/img/webp/sdg.png')}}"></div>
 
         </div>
 
