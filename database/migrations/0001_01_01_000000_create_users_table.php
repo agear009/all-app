@@ -15,6 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('ktp')->nullable();
+            $table->string('nohp')->nullable();
+            $table->string('level')->nullable();
+            $table->string('status')->nullable();
+            $table->string('id_transaksi')->nullable();
+            $table->string('norek')->nullable();
+            $table->string('saldo')->nullable();
+            $table->string('Bank')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

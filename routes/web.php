@@ -17,11 +17,14 @@ Route::get('/login',[LoginController::class,'index']);
 Route::post('/login-check', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::resource('/register',\App\Http\Controllers\RegisterController::class);
-Route::resource('/post',\App\Http\Controllers\PostController::class);
+
 
 
 Route::group(["middleware"=>["auth"]],function(){
 
-Route::get('/admin',[UsersController::class,'index']);
+Route::resource('/admin',\App\Http\Controllers\UsersController::class);
+Route::resource('/user',\App\Http\Controllers\UsersController::class);
+Route::resource('/post',\App\Http\Controllers\PostController::class);
+Route::resource('/produk',\App\Http\Controllers\PostController::class);
 
 });

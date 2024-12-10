@@ -144,7 +144,7 @@ class PostController extends Controller
         $Post->delete();
 
         //redirect to index
-        return redirect()->route('post.index',["title"=>"Post",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('Post.Index',["title"=>"Post",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
     }
 
 }

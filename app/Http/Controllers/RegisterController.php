@@ -45,6 +45,8 @@ class RegisterController extends Controller
             ], 400);
         }
 
+        return redirect('/login')->with('success',' successfull! ');
+
     }
 
 }

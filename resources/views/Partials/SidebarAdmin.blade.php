@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../assets/admin/components/panels.html">
+                        <a href="/produk.index">
                         <span class="sub-item">Produk</span>
                         </a>
                     </li>
@@ -105,7 +105,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../assets/admin/components/typography.html">
+                        <a href="/user">
                         <span class="sub-item">Pengguna</span>
                         </a>
                     </li>
