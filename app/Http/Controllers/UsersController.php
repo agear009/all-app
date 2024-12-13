@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Validation\Validator;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Users;
 use App\Models\Notifikasi;
@@ -17,29 +17,24 @@ use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
-    public function index(){
-        $no=0;
+    public function index() : View
+    {
+        $no = 0;
         $no++;
 
-        $User=Users::all();
-        return View('User.Index',["title"=>"Control Panel","active"=>"User"],compact('User','no'));
+        $user = users::all();
+        return view('User.Index', ["title" => "Control Panel", "active" => "Home"], compact('user','no'));
     }
-    public function create()
+
+    public function create() : View
     {
-        return view('User.Create',["title"=>"User","active"=>"User"]);
+        return view('User.Create', ["title" => "Post", "active" => "Post"]);
     }
-
-
-
 
     public function store(Request $request): RedirectResponse
     {
-
-        //dd($request);
-
-
+        // validate form
         $validated = $request->validate([
-
 
         'name'=>'required|max:255',
         'email'=>'required|max:255',
@@ -50,15 +45,17 @@ class UsersController extends Controller
         'id_transaksi'=>'required',
         'norek'=>'required',
         'saldo'=>'required',
-        'bank'=>'required'
+        'bank'=>'required',
+         'password'=>'required'
         ]);
-        $image=$request->file('ktp');
-        $image->storeAs('User', $image->hashName());
-        //$image-> storeAs('public/Post', $image->hashName());
 
-        Users::create([
+        // upload image
+        $image = $request->file('ktp');
+        $image->storeAs('storage/public/users/', $image->hashName());
 
-            'name'=>$request->name,
+        // create post
+        users::create([
+           'name'=>$request->name,
             'email'=>$request->email,
             'ktp'=>$image->hashName(),
             'nohp'=>$request->nohp,
@@ -67,28 +64,32 @@ class UsersController extends Controller
             'id_transaksi'=>$request->id_transaksi,
             'norek'=>$request->norek,
             'saldo'=>$request->saldo,
-            'bank'=>$request->bank
+            'bank'=>$request->bank,
+            'password'=>Hash::make($request->password)
         ]);
+
+        // create notification
         notifikasi::create([
-            'id_user'=>$request->name,
-            'aksi'=>'Menambah User',
-            'date'=>now()
+            'id_user'   => $request->id_category,
+            'aksi'      => 'Menambah User',
+            'date'      => now()
         ]);
+
         return redirect('/user')->with('success',' successfull! ');
     }
 
     public function edit(string $id)
     {
-        $User=users::findOrFail($id);
-        return view('User.Edit',["title"=>"Post","active"=>"Edit"],compact('User'));
+        // get post by id
+        $user = users::findOrFail($id);
+
+        return view('User.Edit', ["title" => "Post", "active" => "Edit"], compact('user'));
     }
 
     public function update(Request $request, $id)
     {
-        //dd($request);
+        // validate form
         $request->validate([
-
-
             'name'=>'required|max:255',
             'email'=>'required|max:255',
             'ktp'=>'image|mimes:jpeg,jpg,png',
@@ -98,29 +99,25 @@ class UsersController extends Controller
             'id_transaksi'=>'required',
             'norek'=>'required',
             'saldo'=>'required',
-            'bank'=>'required'
-
-
+            'bank'=>'required',
+            'password'=>Hash::make($request->password)
         ]);
-           // dd($request);
-            $User=users::FindOrFail($id);
 
-            if($request->hasFile('ktp'))
-            {
-                //dd($request);
-                //upload new image
-                $image=$request->file('ktp');
-                $image->storeAs('User', $image->hashName());
-                //$image->storeAs('public/Post',$image->hashName());
+        // get post by id
+        $user = users::findOrFail($id);
 
+        // check if new image is uploaded
+        if ($request->hasFile('ktp')) {
+            //upload new image
+            $image = $request->file('ktp');
+            $image->storeAs('storage/public/users/', $image->hashName());
 
-                //delete old image
-                //dd(Storage::delete('public/Post/'.$User->image));
-                Storage::delete('public/User/'.$User->image);
+            // delete old image
+            Storage::delete('storage/public/users/'. $user->image);
 
-                //update Post with new image
-                $User->update([
-                    'name'=>$request->name,
+            // update post with new image
+            $user->update([
+              'name'=>$request->name,
                     'email'=>$request->email,
                     'ktp'=>$image->hashName(),
                     'nohp'=>$request->nohp,
@@ -129,46 +126,43 @@ class UsersController extends Controller
                     'id_transaksi'=>$request->id_transaksi,
                     'norek'=>$request->norek,
                     'saldo'=>$request->saldo,
-                    'bank'=>$request->bank
-
-                ]);
-
-            }
-
-            else
-            {
-                $User->update([
-                    'name'=>$request->name,
-                    'email'=>$request->email,
-                    'nohp'=>$request->nohp,
-                    'level'=>$request->level,
-                    'status'=>$request->status,
-                    'id_transaksi'=>$request->id_transaksi,
-                    'norek'=>$request->norek,
-                    'saldo'=>$request->saldo,
-                    'bank'=>$request->bank
-
-                ]);
-
-            }
-            return redirect('/user')->with('success','Edit Berhasil! ');
+                    'bank'=>$request->bank,
+                    'password'=>Hash::make($request->password)
+            ]);
+        } else {
+            // update post without image
+            $user->update([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'nohp'=>$request->nohp,
+                'level'=>$request->level,
+                'status'=>$request->status,
+                'id_transaksi'=>$request->id_transaksi,
+                'norek'=>$request->norek,
+                'saldo'=>$request->saldo,
+                'bank'=>$request->bank,
+                'password'=>Hash::make($request->password)
+            ]);
         }
+
+        //redirect to post index
+        return redirect()->route('user.index')->with(['success' => 'Data Berhasil Diubah!']);
+    }
 
 
     public function destroy(string $id)
     {
-        $Post=users::findOrFail($id);
+        // get post by id
+        $user = users::findOrFail($id);
 
-        //delete image
-           //delete old image
-           Storage::delete('public/User/'.$Post->image);
+        // delete image
+        Storage::delete('storage/public/users/'. $user->image);
 
+        // delete post
+        $user->delete();
 
-        // delete member
-        $Post->delete();
-
-        //redirect to index
-        return redirect()->route('user.index',["title"=>"Post",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
+        //redirect to post index
+        return redirect()->route('user.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 
 }

@@ -159,7 +159,7 @@
                     </tbody>
                 </table>
 
-                        @forelse($Post as $Post)
+                        @forelse($post as $post)
                         <table class="table align-items-center mb-0">
                         <tbody>
 
@@ -171,15 +171,15 @@
                               {{ $no++ }}
                             </th>
 
-                            <th scope="col" width="">{{ $Post->id_category }}</th>
-                            <th scope="col" width="20%"><img src="{{ asset('storage/Post/'.$Post->image) }}" width="20%"></th>
-                            <th scope="col" width="20%">{{ $Post->title }}</th>
-                            <th scope="col" width="">{{ $Post->author }}</th>
+                            <th scope="col" width="">{{ $post->id_category }}</th>
+                            <th scope="col" width="20%"><img src="{{ asset('storage/public/posts/'.$post->image) }}" width="20%"></th>
+                            <th scope="col" width="20%">{{ $post->title }}</th>
+                            <th scope="col" width="">{{ $post->author }}</th>
 
                             <td class="text-end">
 
-                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('post.destroy', $Post->id) }}" method="POST">
-                                    <a href="{{ route('post.edit', $Post->id) }}" class="btn btn-sm btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('post.destroy', $post->id) }}" method="POST">
+                                    <a href="{{ route('post.edit', $post->id) }}" class="btn btn-sm btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <span class="badge badge-success">Edit</span></a>
                                     </a>
                                     @csrf

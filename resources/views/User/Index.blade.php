@@ -132,8 +132,7 @@
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#"
-                              >Something else here</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
                           </div>
                         </div>
                       </div>
@@ -159,7 +158,7 @@
                     </tbody>
                 </table>
 
-                        @forelse($User as $User)
+                        @forelse($user as $User)
                         <table class="table align-items-center mb-0">
                         <tbody>
 
@@ -172,7 +171,7 @@
                             </th>
 
                             <th scope="col" width="">{{ $User->name }}</th>
-                            <th scope="col" width="20%"><img src="{{ asset('storage/User/'.$User->ktp) }}" width="20%"></th>
+                            <th scope="col" width="20%"><img src="{{ asset('storage/public/users/'.$User->ktp) }}" width="20%"></th>
                             <th scope="col" width="20%">{{ $User->email }}</th>
                             <th scope="col" width="">{{ $User->nohp }}</th>
                             <th scope="col" width="">{{ $User->level }}</th>

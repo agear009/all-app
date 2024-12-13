@@ -20,6 +20,7 @@ class Users extends Model
     'id_transaksi',
     'norek',
     'saldo',
-    'bank'
+    'bank',
+    'password'
     ];
 }

@@ -146,7 +146,7 @@
 
 
                       <!-- Projects table -->
-                      <form action="{{ route('post.update', $Post->id) }}" method="POST"  enctype="multipart/form-data" >
+                      <form action="{{ route('post.update', $post->id) }}" method="POST"  enctype="multipart/form-data" >
                         @csrf
                         @method('PUT')
                       <table class="table align-items-center mb-0">
@@ -168,7 +168,7 @@
                             <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Category</label>
                                 <select class="form-control" id="id_category" name="id_category" aria-describedby="id_category" required >
-                                    <option name="id_category" value="{{ $Post->id_category }}">{{ $Post->id_category }}</option>
+                                    <option name="id_category" value="{{ $post->id_category }}">{{ $post->id_category }}</option>
                                     <option name="id_category" value="Viral">Viral</option>
                                     <option name="id_category" value="Teknologi">Teknologi</option>
                                     <option name="id_category" value="Edukasi">Edukasi</option>
@@ -190,36 +190,36 @@
                           <tr>
                             <th scope="row" colspan="6">
                             <label for="exampleInputname1" class="form-label">Gambar</label><br>
-                            <img src="{{ asset('storage/Post/'.$Post->image) }}" width="20%">
-                            <input type="file" class="form-control" id="name" name="image" aria-describedby="Cover" value="{{ $Post->image }}">
+                            <img src="{{ asset('storage/public/posts/'.$post->image) }}" width="20%">
+                            <input type="file" class="form-control" id="name" name="image" aria-describedby="Cover" value="{{ $post->image }}">
 
                             </th>
                           </tr>
                           <tr>
                             <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="name" name="title" aria-describedby="name Category" value="{{ $Post->title }}" required>
+                                <input type="text" class="form-control" id="name" name="title" aria-describedby="name Category" value="{{ $post->title }}" required>
 
                             </th>
                           </tr>
                           <tr>
                             <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Content</label>
-                                <textarea id="myTextarea" name="content">{{ $Post->content }}</textarea>
+                                <textarea id="myTextarea" name="content">{{ $post->content }}</textarea>
 
                             </th>
                           </tr>
                           <tr>
                             <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Author</label>
-                                <input type="text" class="form-control" id="name" name="author" aria-describedby=" author name" required value="{{ $Post->author }}">
+                                <input type="text" class="form-control" id="name" name="author" aria-describedby=" author name" required value="{{ $post->author }}">
 
                             </th>
                           </tr>
                           <tr>
                             <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Source</label>
-                                <input type="text" class="form-control" id="producer" name="source" aria-describedby="source" value="{{ $Post->source }}" required >
+                                <input type="text" class="form-control" id="producer" name="source" aria-describedby="source" value="{{ $post->source }}" required >
 
                             </th>
                           </tr>

@@ -17,134 +17,124 @@ use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
-    public function Index(){
-        $no=0;
+    public function index() : View
+    {
+        $no = 0;
         $no++;
 
-        $Post=Post::all();
-        return View('Post.Index',["title"=>"Control Panel","active"=>"Home"],compact('Post','no'));
+        $post = Post::all();
+        return view('Post.Index', ["title" => "Control Panel", "active" => "Home"], compact('post','no'));
     }
-    public function create()
+
+    public function create() : View
     {
-        return view('Post.Create',["title"=>"Post","active"=>"Post"]);
+        return view('Post.Create', ["title" => "Post", "active" => "Post"]);
     }
-
-
-
 
     public function store(Request $request): RedirectResponse
     {
-
-        //dd($request);
-
-
+        // validate form
         $validated = $request->validate([
-
-
-        'id_category'=>'required|max:255',
-        'image'=>'image|mimes:jpeg,jpg,png',
-        'title'=>'required|max:255',
-        'content'=>'required',
-        'author'=>'required|max:255',
-        'source'=>'required'
+            'id_category'=>'required|max:255',
+            'image'=>'image|mimes:jpeg,jpg,png',
+            'title'=>'required|max:255',
+            'content'=>'required',
+            'author'=>'required|max:255',
+            'source'=>'required'
         ]);
-        $image=$request->file('image');
-        $image->storeAs('Post', $image->hashName());
-        //$image-> storeAs('public/Post', $image->hashName());
 
+        // upload image
+        $image = $request->file('image');
+        $image->storeAs('public/posts', $image->hashName());
+
+        // create post
         Post::create([
-            'id_category'=>$request->id_category,
-            'image'=>$image->hashName(),
-            'title'=>$request->title,
-            'content'=>$request->content,
-            'author'=>$request->author,
-            'source'=>$request->source
+            'id_category'   => $request->id_category,
+            'image'         => $image->hashName(),
+            'title'         => $request->title,
+            'content'       => $request->content,
+            'author'        => $request->author,
+            'source'        => $request->source
         ]);
+
+        // create notification
         notifikasi::create([
-            'id_user'=>$request->id_category,
-            'aksi'=>'Menambah Positingan',
-            'date'=>now()
+            'id_user'   => $request->id_category,
+            'aksi'      => 'Menambah Positingan',
+            'date'      => now()
         ]);
+
         return redirect('/post')->with('success',' successfull! ');
     }
 
     public function edit(string $id)
     {
-        $Post=post::findOrFail($id);
-        return view('Post.Edit',["title"=>"Post","active"=>"Edit"],compact('Post'));
+        // get post by id
+        $post = Post::findOrFail($id);
+
+        return view('Post.Edit', ["title" => "Post", "active" => "Edit"], compact('post'));
     }
 
     public function update(Request $request, $id)
     {
+        // validate form
         $request->validate([
-
-        'id_category'=>'required|max:255',
-        'title'=>'required|max:255',
-        'content'=>'required',
-        'author'=>'required|max:255',
-        'source'=>'required'
-
-
+            'id_category'   => 'required|max:255',
+            'title'         => 'required|max:255',
+            'content'       => 'required',
+            'author'        => 'required|max:255',
+            'source'        => 'required'
         ]);
-           // dd($request);
-            $Post=post::FindOrFail($id);
 
-            if($request->hasFile('image'))
-            {
-                //dd($request);
-                //upload new image
-                $image=$request->file('image');
-                $image->storeAs('Post', $image->hashName());
-                //$image->storeAs('public/Post',$image->hashName());
+        // get post by id
+        $post = Post::findOrFail($id);
 
+        // check if new image is uploaded
+        if ($request->hasFile('image')) {
+            //upload new image
+            $image = $request->file('image');
+            $image->storeAs('public/posts', $image->hashName());
 
-                //delete old image
-                //dd(Storage::delete('public/Post/'.$Post->image));
-                Storage::delete('public/Post/'.$Post->image);
+            // delete old image
+            Storage::delete('public/posts/'. $post->image);
 
-                //update Post with new image
-                $Post->update([
-                    'id_category'=>$request->id_category,
-                    'image'=>$image->hashName(),
-                    'title'=>$request->title,
-                    'content'=>$request->content,
-                    'author'=>$request->author,
-                    'source'=>$request->source
-
-                ]);
-
-            }
-
-            else
-            {
-                $Post->update([
-                    'id_category'=>$request->id_category,
-                    'title'=>$request->title,
-                    'content'=>$request->content,
-                    'author'=>$request->author,
-                    'source'=>$request->source
-
-                ]);
-
-            }
-            return redirect('/post')->with('success','Edit Berhasil! ');
+            // update post with new image
+            $post->update([
+                'id_category'   => $request->id_category,
+                'image'         => $image->hashName(),
+                'title'         => $request->title,
+                'content'       => $request->content,
+                'author'        => $request->author,
+                'source'        => $request->source
+            ]);
+        } else {
+            // update post without image
+            $post->update([
+                'id_category'   => $request->id_category,
+                'title'         => $request->title,
+                'content'       => $request->content,
+                'author'        => $request->author,
+                'source'        => $request->source
+            ]);
         }
+
+        //redirect to post index
+        return redirect()->route('post.index')->with(['success' => 'Data Berhasil Diubah!']);
+    }
 
 
     public function destroy(string $id)
     {
-        $Post=post::findOrFail($id);
+        // get post by id
+        $post = Post::findOrFail($id);
 
-        //delete image
-           //delete old image
-           Storage::delete('public/Post/'.$Post->image);
+        // delete image
+        Storage::delete('public/posts/'. $post->image);
 
+        // delete post
+        $post->delete();
 
-        // delete member
-        $Post->delete();
-
-        //redirect to index
-        return redirect()->route('Post.Index',["title"=>"Post",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
+        //redirect to post index
+        return redirect()->route('post.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
-
 }

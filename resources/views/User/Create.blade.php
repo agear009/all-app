@@ -19,7 +19,7 @@
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('User.Create') }}" class="btn btn-primary btn-round">Tambah User</a>
+                <a href="{{ route('user.create') }}" class="btn btn-primary btn-round">Tambah User</a>
               </div>
             </div>
             <div class="row">
@@ -145,7 +145,7 @@
 
 
                       <!-- Projects table -->
-                      <form action="{{ route('post.store') }}" method="POST"  enctype="multipart/form-data" >
+                      <form action="{{ route('user.store') }}" method="POST"  enctype="multipart/form-data" >
                         @csrf
                       <table class="table align-items-center mb-0">
                         <thead class="thead-light">
@@ -176,6 +176,13 @@
 
                                 </th>
                               </tr>
+                            <tr>
+                                <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Password</label>
+                                    <input type="text" class="form-control" id="name" name="password" aria-describedby="password" required>
+
+                                </th>
+                              </tr>
 
                               <tr>
                                 <th scope="row" colspan="6">
@@ -192,18 +199,30 @@
                                 </th>
                               </tr>
 
+
                               <tr>
                                 <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Level</label>
-                                <input type="text" class="form-control" id="name" name="level" aria-describedby="Cover" required>
 
+                                    <select class="form-control" id="level_user" name="level" required>
+
+                                    <option class="form-control" id="level_user" name="level" value="user">User</option>
+                                    <option class="form-control" id="level_user" name="level" value="pekerja">pekerja</option>
+                                    <option class="form-control" id="level_user" name="level" value="admin">Admin</option>
+                                    </select>
                                 </th>
                               </tr>
 
                               <tr>
                                 <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Status</label>
-                                <input type="text" class="form-control" id="name" name="status" aria-describedby="Cover" required>
+
+                                <select class="form-control" id="level_user" name="status" required>
+                                <option class="form-control" id="level_user" name="status" value="menunggu_konfirmasi">Menunggu Konfirmasi</option>
+                                <option class="form-control" id="level_user" name="status" value="aktif">Aktif</option>
+                                <option class="form-control" id="level_user" name="status" value="tidak_aktif">Tidak Aktif</option>
+                                </select>
+
                                 </th>
                               </tr>
 

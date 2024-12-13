@@ -146,7 +146,7 @@
 
 
                       <!-- Projects table -->
-                      <form action="{{ route('user.update', $User->id) }}" method="POST"  enctype="multipart/form-data" >
+                      <form action="{{ route('user.update', $user->id) }}" method="POST"  enctype="multipart/form-data" >
                         @csrf
                         @method('PUT')
                         <table class="table align-items-center mb-0">
@@ -167,21 +167,29 @@
                                 <tr>
                                     <th scope="row" colspan="6">
                                         <label for="exampleInputname1" class="form-label">Nama</label>
-                                        <input type="text" class="form-control" id="name" name="name" aria-describedby="name Category" value="{{ $User->name }}" required>
+                                        <input type="text" class="form-control" id="name" name="name" aria-describedby="name Category" value="{{ $user->name }}" required>
 
                                     </th>
                                   </tr>
                                 <tr>
                                     <th scope="row" colspan="6">
                                         <label for="exampleInputname1" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="name" name="email" aria-describedby="name Category" value="{{ $User->email }}" required>
+                                        <input type="text" class="form-control" id="name" name="email" aria-describedby="name Category" value="{{ $user->email }}" required>
 
                                     </th>
                                   </tr>
 
                                   <tr>
                                     <th scope="row" colspan="6">
-                                    <img src="{{ asset('storage/user/'.$User->ktp) }}" width="20%"><br>
+                                        <label for="exampleInputname1" class="form-label">Password</label>
+                                        <input type="text" class="form-control" id="name" name="password" aria-describedby="password" value="{{ $user->password }}"required>
+
+                                    </th>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row" colspan="6">
+                                    <img src="{{ asset('storage/public/users/'.$user->ktp) }}" width="20%"><br>
                                     <label for="exampleInputname1" class="form-label">KTP (bila ada)</label>
                                     <input type="file" class="form-control" id="ktp" name="ktp" aria-describedby="Cover">
 
@@ -190,7 +198,7 @@
                                   <tr>
                                     <th scope="row" colspan="6">
                                     <label for="exampleInputname1" class="form-label">No Handphone</label>
-                                    <input type="text" class="form-control" id="name" name="nohp" aria-describedby="Cover" value="{{ $User->nohp }}" required>
+                                    <input type="text" class="form-control" id="name" name="nohp" aria-describedby="Cover" value="{{ $user->nohp }}" required>
 
                                     </th>
                                   </tr>
@@ -200,7 +208,7 @@
                                     <label for="exampleInputname1" class="form-label">Level</label>
 
                                         <select class="form-control" id="level_user" name="level" required>
-                                        <option class="form-control" id="level_user" name="level" value="{{ $User->level }}">{{ $User->level }}</option>
+                                        <option class="form-control" id="level_user" name="level" value="{{ $user->level }}">{{ $user->level }}</option>
                                         <option class="form-control" id="level_user" name="level" value="user">User</option>
                                         <option class="form-control" id="level_user" name="level" value="pekerja">pekerja</option>
                                         <option class="form-control" id="level_user" name="level" value="admin">Admin</option>
@@ -213,7 +221,7 @@
                                     <label for="exampleInputname1" class="form-label">Status</label>
 
                                     <select class="form-control" id="level_user" name="status" required>
-                                    <option class="form-control" id="level_user" name="status" value="{{ $User->status }}">{{ $User->status }}</option>
+                                    <option class="form-control" id="level_user" name="status" value="{{ $user->status }}">{{ $user->status }}</option>
                                     <option class="form-control" id="level_user" name="status" value="menunggu_konfirmasi">Menunggu Konfirmasi</option>
                                     <option class="form-control" id="level_user" name="status" value="aktif">Aktif</option>
                                     <option class="form-control" id="level_user" name="status" value="tidak_aktif">Tidak Aktif</option>
@@ -225,21 +233,21 @@
                                   <tr>
                                     <th scope="row" colspan="6">
                                     <label for="exampleInputname1" class="form-label">ID Transaksi</label>
-                                    <input type="text" class="form-control" id="name" name="id_transaksi" aria-describedby="Cover" value="{{ $User->id_transaksi }}" required>
+                                    <input type="text" class="form-control" id="name" name="id_transaksi" aria-describedby="Cover" value="{{ $user->id_transaksi }}" required>
                                     </th>
                                   </tr>
 
                                   <tr>
                                     <th scope="row" colspan="6">
                                     <label for="exampleInputname1" class="form-label">No Rekening</label>
-                                    <input type="text" class="form-control" id="name" name="norek" aria-describedby="Cover" value="{{ $User->norek }}" required>
+                                    <input type="text" class="form-control" id="name" name="norek" aria-describedby="Cover" value="{{ $user->norek }}" required>
                                     </th>
                                   </tr>
 
                                   <tr>
                                     <th scope="row" colspan="6">
                                     <label for="exampleInputname1" class="form-label">Saldo</label>
-                                    <input type="text" class="form-control" id="rupiah" name="saldo" aria-describedby="Cover" value="{{ $User->saldo }}"required>
+                                    <input type="text" class="form-control" id="rupiah" name="saldo" aria-describedby="Cover" value="{{ $user->saldo }}"required>
                                     </th>
                                   </tr>
 
@@ -247,7 +255,7 @@
                                 <th scope="row" colspan="6">
                                     <label for="exampleInputname1" class="form-label">Bank</label>
                                     <select class="form-control" id="level_user" name="bank" required>
-                                        <option class="form-control" id="level_user" name="bank" value="{{ $User->bank }}">{{ $User->bank }}</option>
+                                        <option class="form-control" id="level_user" name="bank" value="{{ $user->bank }}">{{ $user->bank }}</option>
                                         <option class="form-control" id="level_user" name="bank" value="Bank Indonesia (BI)">Bank Indonesia (BI)</option>
                                         <option class="form-control" id="level_user" name="bank" value="Bank Mandiri">Bank Mandiri</option>
                                         <option class="form-control" id="level_user" name="bank" value="Bank Negara Indonesia (BNI)">Bank Negara Indonesia (BNI)</option>
