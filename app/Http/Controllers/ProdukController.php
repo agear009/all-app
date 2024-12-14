@@ -15,8 +15,8 @@ class ProdukController extends Controller
         $no=0;
         $no++;
 
-        $Produk=Produk::all();
-        return View('Product.Index',["title"=>"Control Panel","active"=>"Product"],compact('Product','no'));
+        $produk=Produk::all();
+        return View('Product.Index',["title"=>"Control Panel","active"=>"Product"],compact('produk','no'));
     }
     public function create()
     {
@@ -41,7 +41,8 @@ class ProdukController extends Controller
         'stock'=>'required'
         ]);
         $image=$request->file('image');
-        $image->storeAs('Produk', $image->hashName());
+        $image->storeAs('public/Produk/', $image->hashName());
+
         //$image-> storeAs('public/Produk', $image->hashName());
 
         Produk::create([
@@ -54,18 +55,18 @@ class ProdukController extends Controller
             'stock'=>$request->stock
         ]);
         notifikasi::create([
-            'id_user'=>$request->id_category,
+            'id_user'=>$request->category,
             'aksi'=>'Menambah Produk',
             'date'=>now()
         ]);
-        return redirect('/Produk')->with('success',' successfull! ');
+        return redirect('/produk')->with('success',' successfull! ');
     }
 
 
     public function edit(string $id)
     {
-        $Produk=Produk::findOrFail($id);
-        return view('Produk.Edit',["title"=>"Produk","active"=>"Edit"],compact('Produk'));
+        $produk=Produk::findOrFail($id);
+        return view('Product.Edit',["title"=>"Produk","active"=>"Edit"],compact('produk'));
     }
 
     public function update(Request $request, $id)
@@ -89,7 +90,8 @@ class ProdukController extends Controller
                 //dd($request);
                 //upload new image
                 $image=$request->file('image');
-                $image->storeAs('Produk', $image->hashName());
+                $image->storeAs('public/Produk/', $image->hashName());
+
                 //$image->storeAs('public/Produk',$image->hashName());
 
 
@@ -124,7 +126,7 @@ class ProdukController extends Controller
                 ]);
 
             }
-            return redirect('/Produk')->with('success','Edit Berhasil! ');
+            return redirect('/produk')->with('success','Edit Berhasil! ');
         }
 
 
@@ -137,11 +139,12 @@ class ProdukController extends Controller
            Storage::delete('public/Produk/'.$Produk->image);
 
 
+
         // delete member
         $Produk->delete();
 
         //redirect to index
-        return redirect()->route('Produk.Index',["title"=>"Produk",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('produk.index',["title"=>"Produk",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
     }
 
 }

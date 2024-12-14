@@ -171,7 +171,7 @@
                             </th>
 
                             <th scope="col" width="">{{ $User->name }}</th>
-                            <th scope="col" width="20%"><img src="{{ asset('storage/public/users/'.$User->ktp) }}" width="20%"></th>
+                            <th scope="col" width="20%"><img src="{{ asset('/storage/public/users/'.$User->ktp) }}" width="20%"></th>
                             <th scope="col" width="20%">{{ $User->email }}</th>
                             <th scope="col" width="">{{ $User->nohp }}</th>
                             <th scope="col" width="">{{ $User->level }}</th>

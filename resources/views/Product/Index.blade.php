@@ -19,7 +19,7 @@
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('post.create') }}" class="btn btn-primary btn-round">Tambah Produk</a>
+                <a href="{{ route('produk.create') }}" class="btn btn-primary btn-round">Tambah Produk</a>
               </div>
             </div>
             <div class="row">
@@ -117,7 +117,7 @@
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Daftar Postingan</div>
+                      <div class="card-title">Daftar Produk</div>
                       <div class="card-tools">
                         <div class="dropdown">
                           <button
@@ -159,7 +159,7 @@
                     </tbody>
                 </table>
 
-                        @forelse($Post as $Post)
+                        @forelse($produk as $produk)
                         <table class="table align-items-center mb-0">
                         <tbody>
 
@@ -171,15 +171,15 @@
                               {{ $no++ }}
                             </th>
 
-                            <th scope="col" width="">{{ $Post->id_category }}</th>
-                            <th scope="col" width="20%"><img src="{{ asset('storage/Post/'.$Post->image) }}" width="20%"></th>
-                            <th scope="col" width="20%">{{ $Post->title }}</th>
-                            <th scope="col" width="">{{ $Post->author }}</th>
+                            <th scope="col" width="">{{ $produk->category }}</th>
+                            <th scope="col" width="20%"><img src="{{ asset('/storage/public/produk/'.$produk->image) }}" width="20%"></th>
+                            <th scope="col" width="20%">{{ $produk->name }}</th>
+                            <th scope="col" width="">{{ $produk->price }}</th>
 
                             <td class="text-end">
 
-                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('post.destroy', $Post->id) }}" method="POST">
-                                    <a href="{{ route('post.edit', $Post->id) }}" class="btn btn-sm btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('produk.destroy', $produk->id) }}" method="POST">
+                                    <a href="{{ route('produk.edit', $produk->id) }}" class="btn btn-sm btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <span class="badge badge-success">Edit</span></a>
                                     </a>
                                     @csrf

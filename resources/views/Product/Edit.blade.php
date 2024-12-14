@@ -14,13 +14,13 @@
               class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
             >
               <div>
-                <h3 class="fw-bold mb-3">Postingan</h3>
-                <h6 class="op-7 mb-2">Silahkan tambah postingan</h6>
+                <h3 class="fw-bold mb-3">produk</h3>
+                <h6 class="op-7 mb-2">Silahkan tambah produk</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('post.create') }}" class="btn btn-primary btn-round">Tambah Postingan</a>
+                <a href="{{ route('produk.create') }}" class="btn btn-primary btn-round">Tambah produk</a>
               </div>
             </div>
             <div class="row">
@@ -118,7 +118,7 @@
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Masukan Data Postingan</div>
+                      <div class="card-title">Masukan Data produk</div>
                       <div class="card-tools">
                         <div class="dropdown">
                           <button
@@ -146,93 +146,111 @@
 
 
                       <!-- Projects table -->
-                      <form action="{{ route('post.update', $Post->id) }}" method="POST"  enctype="multipart/form-data" >
+                      <form action="{{ route('produk.update', $produk->id) }}" method="POST"  enctype="multipart/form-data" >
                         @csrf
                         @method('PUT')
-                      <table class="table align-items-center mb-0">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" class="text-end"></th>
+                        <table class="table align-items-center mb-0">
+                            <thead class="thead-light">
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end"></th>
 
 
-                          </tr>
-                        </thead>
+                              </tr>
+                            </thead>
 
-                        <tbody>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Category</label>
-                                <select class="form-control" id="id_category" name="id_category" aria-describedby="id_category" required >
-                                    <option name="id_category" value="{{ $Post->id_category }}">{{ $Post->id_category }}</option>
-                                    <option name="id_category" value="Viral">Viral</option>
-                                    <option name="id_category" value="Teknologi">Teknologi</option>
-                                    <option name="id_category" value="Edukasi">Edukasi</option>
-                                    <option name="id_category" value="Politik">Politik</option>
-                                    <option name="id_category" value="Olah Raga">Olah Raga</option>
-                                    <option name="id_category" value="Wisata">Wisata</option>
-                                    <option name="id_category" value="Manca Negara">Manca Negara</option>
-                                    <option name="id_category" value="Kesehatan">Kesehatan</option>
-                                    <option name="id_category" value="Gaya Hidup">Gaya Hidup</option>
-                                    <option name="id_category" value="Kuliner">Kuliner</option>
-                                    <option name="id_category" value="Otomotif">Otomotif</option>
-                                    <option name="id_category" value="Sejarah">Sejarah</option>
-                                    <option name="id_category" value="Film">Film</option>
+                            <tbody>
+                              <tr>
+                                <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Category</label>
+                                    <select class="form-control" id="id_category" name="category" aria-describedby="category" required >
+                                        <option name="category" value="{{ $produk->category }}">{{ $produk->category }}</option>
+                                        <option name="category" value="Teknologi">Teknologi</option>
+                                        <option name="category" value="Edukasi">Edukasi</option>
+                                        <option name="category" value="Politik">Politik</option>
+                                        <option name="category" value="Olah_Raga">Olah Raga</option>
+                                        <option name="category" value="Wisata">Wisata</option>
+                                        <option name="category" value="Manca_Negara">Manca Negara</option>
+                                        <option name="category" value="Kesehatan">Kesehatan</option>
+                                        <option name="category" value="Gaya Hidup">Gaya Hidup</option>
+                                        <option name="category" value="Kuliner">Kuliner</option>
+                                        <option name="category" value="Otomotif">Otomotif</option>
+                                        <option name="category" value="Sejarah">Sejarah</option>
+                                        <option name="category" value="Film">Film</option>
 
-                                </select>
+                                    </select>
 
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                            <label for="exampleInputname1" class="form-label">Gambar</label><br>
-                            <img src="{{ asset('storage/Post/'.$Post->image) }}" width="20%">
-                            <input type="file" class="form-control" id="name" name="image" aria-describedby="Cover" value="{{ $Post->image }}">
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="name" name="title" aria-describedby="name Category" value="{{ $Post->title }}" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Content</label>
-                                <textarea id="myTextarea" name="content">{{ $Post->content }}</textarea>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Author</label>
-                                <input type="text" class="form-control" id="name" name="author" aria-describedby=" author name" required value="{{ $Post->author }}">
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Source</label>
-                                <input type="text" class="form-control" id="producer" name="source" aria-describedby="source" value="{{ $Post->source }}" required >
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-
-                            </th>
-                          </tr>
+                                </th>
+                              </tr>
 
 
-                        </tbody>
-                      </table>
+
+                              <tr>
+                                <th scope="row" colspan="6">
+                                <label for="exampleInputname1" class="form-label">Nama</label>
+                                <input type="text" class="form-control" id="name" name="name" aria-describedby="Cover" value="{{ $produk->name }}" required>
+
+                                </th>
+                              </tr>
+
+                              <tr>
+                                <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Gambar</label><br>
+                                    <img src="{{ asset('/storage/public/Produk/'.$produk->image) }}" width="20%">
+                                    <input type="file" class="form-control" id="name" name="image"  aria-describedby="name Category" required>
+
+                                </th>
+                              </tr>
+                              <tr>
+                                <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Deskripsi</label>
+                                    <textarea id="myTextarea" name="description">{{ $produk->description }}</textarea>
+
+                                </th>
+                              </tr>
+                              <tr>
+                                <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Harga</label>
+                                    <input type="text" class="form-control" id="name" name="price" aria-describedby=" author name" value="{{ $produk->price }}" required>
+
+                                </th>
+                              </tr>
+
+                              <tr>
+                                <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Status</label>
+                                    <select class="form-control" id="id_category" name="status" aria-describedby="category" required >
+                                        <option name="status" value="{{ $produk->status }}">{{ $produk->status }}</option>
+                                        <option name="status" value="aktif">Aktif</option>
+                                        <option name="status" value="tidak_aktif">Tidak Aktif</option>
+
+
+                                    </select>
+
+                                </th>
+                              </tr>
+
+                              <tr>
+                                <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Stok</label>
+                                    <input type="text" class="form-control" id="producer" name="stock" aria-describedby="source" value="{{ $produk->stock }}" required>
+
+                                </th>
+                              </tr>
+                              <tr>
+                                <th scope="row" colspan="6">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                                </th>
+                              </tr>
+
+
+                            </tbody>
+                          </table>
 
                     </form>
                     </div>

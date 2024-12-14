@@ -189,7 +189,7 @@
 
                                   <tr>
                                     <th scope="row" colspan="6">
-                                    <img src="{{ asset('storage/public/users/'.$user->ktp) }}" width="20%"><br>
+                                    <img src="{{ asset('/storage/public/users/'.$user->ktp) }}" width="20%"><br>
                                     <label for="exampleInputname1" class="form-label">KTP (bila ada)</label>
                                     <input type="file" class="form-control" id="ktp" name="ktp" aria-describedby="Cover">
 

@@ -1,15 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Validation\Validator;
 use Illuminate\Routing\Controller;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Notifikasi;
-use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
@@ -93,7 +89,7 @@ class PostController extends Controller
         if ($request->hasFile('image')) {
             //upload new image
             $image = $request->file('image');
-            $image->storeAs('public/posts', $image->hashName());
+            $image->storeAs('public/posts/', $image->hashName());
 
             // delete old image
             Storage::delete('public/posts/'. $post->image);

@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/produk.index">
+                        <a href="/produk">
                         <span class="sub-item">Produk</span>
                         </a>
                     </li>

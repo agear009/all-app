@@ -13,13 +13,13 @@
               class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
             >
               <div>
-                <h3 class="fw-bold mb-3">Postingan</h3>
-                <h6 class="op-7 mb-2">Silahkan tambah postingan</h6>
+                <h3 class="fw-bold mb-3">Produk</h3>
+                <h6 class="op-7 mb-2">Silahkan tambah Produk</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('post.create') }}" class="btn btn-primary btn-round">Tambah Postingan</a>
+                <a href="{{ route('produk.create') }}" class="btn btn-primary btn-round">Tambah Produk</a>
               </div>
             </div>
             <div class="row">
@@ -117,7 +117,7 @@
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Masukan Data Postingan</div>
+                      <div class="card-title">Masukan Data Produk</div>
                       <div class="card-tools">
                         <div class="dropdown">
                           <button
@@ -145,7 +145,7 @@
 
 
                       <!-- Projects table -->
-                      <form action="{{ route('post.store') }}" method="POST"  enctype="multipart/form-data" >
+                      <form action="{{ route('produk.store') }}" method="POST"  enctype="multipart/form-data" >
                         @csrf
                       <table class="table align-items-center mb-0">
                         <thead class="thead-light">
@@ -165,57 +165,75 @@
                           <tr>
                             <th scope="row" colspan="6">
                                 <label for="exampleInputname1" class="form-label">Category</label>
-                                <select class="form-control" id="id_category" name="id_category" aria-describedby="category_id" required >
-                                    <option name="category_id" value="Hot_News">Viral</option>
-                                    <option name="category_id" value="Teknologi">Teknologi</option>
-                                    <option name="category_id" value="Edukasi">Edukasi</option>
-                                    <option name="category_id" value="Politik">Politik</option>
-                                    <option name="category_id" value="Olah_Raga">Olah Raga</option>
-                                    <option name="category_id" value="Wisata">Wisata</option>
-                                    <option name="category_id" value="Manca_Negara">Manca Negara</option>
-                                    <option name="category_id" value="Kesehatan">Kesehatan</option>
-                                    <option name="category_id" value="Gaya Hidup">Gaya Hidup</option>
-                                    <option name="category_id" value="Kuliner">Kuliner</option>
-                                    <option name="category_id" value="Otomotif">Otomotif</option>
-                                    <option name="category_id" value="Sejarah">Sejarah</option>
-                                    <option name="category_id" value="Film">Film</option>
+                                <select class="form-control" id="id_category" name="category" aria-describedby="category" required >
+                                    <option name="category" value="Hot_News">Viral</option>
+                                    <option name="category" value="Teknologi">Teknologi</option>
+                                    <option name="category" value="Edukasi">Edukasi</option>
+                                    <option name="category" value="Politik">Politik</option>
+                                    <option name="category" value="Olah_Raga">Olah Raga</option>
+                                    <option name="category" value="Wisata">Wisata</option>
+                                    <option name="category" value="Manca_Negara">Manca Negara</option>
+                                    <option name="category" value="Kesehatan">Kesehatan</option>
+                                    <option name="category" value="Gaya Hidup">Gaya Hidup</option>
+                                    <option name="category" value="Kuliner">Kuliner</option>
+                                    <option name="category" value="Otomotif">Otomotif</option>
+                                    <option name="category" value="Sejarah">Sejarah</option>
+                                    <option name="category" value="Film">Film</option>
 
                                 </select>
 
                             </th>
                           </tr>
+
+
+
                           <tr>
                             <th scope="row" colspan="6">
-                            <label for="exampleInputname1" class="form-label">Gambar (bila ada)</label>
-                            <input type="file" class="form-control" id="name" name="image" aria-describedby="Cover" required>
+                            <label for="exampleInputname1" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="Cover" required>
+
+                            </th>
+                          </tr>
+
+                          <tr>
+                            <th scope="row" colspan="6">
+                                <label for="exampleInputname1" class="form-label">Gambar</label>
+                                <input type="file" class="form-control" id="name" name="image" aria-describedby="name Category" required>
 
                             </th>
                           </tr>
                           <tr>
                             <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="name" name="title" aria-describedby="name Category" required>
+                                <label for="exampleInputname1" class="form-label">Deskripsi</label>
+                                <textarea id="myTextarea" name="description"></textarea>
 
                             </th>
                           </tr>
                           <tr>
                             <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Content</label>
-                                <textarea id="myTextarea" name="content"></textarea>
+                                <label for="exampleInputname1" class="form-label">Harga</label>
+                                <input type="text" class="form-control" id="name" name="price" aria-describedby=" author name" required>
 
                             </th>
                           </tr>
+
                           <tr>
                             <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Author</label>
-                                <input type="text" class="form-control" id="name" name="author" aria-describedby=" author name" required>
+                                <label for="exampleInputname1" class="form-label">Category</label>
+                                <select class="form-control" id="id_category" name="status" aria-describedby="category" required >
+                                    <option name="status" value="aktif">Aktif</option>
+                                    <option name="status" value="tidak_aktif">Tidak Aktif</option>
+
+
+                                </select>
 
                             </th>
                           </tr>
+
                           <tr>
                             <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Source</label>
-                                <input type="text" class="form-control" id="producer" name="source" aria-describedby="source" required>
+                                <label for="exampleInputname1" class="form-label">Stok</label>
+                                <input type="text" class="form-control" id="producer" name="stock" aria-describedby="source" required>
 
                             </th>
                           </tr>

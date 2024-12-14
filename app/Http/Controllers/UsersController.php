@@ -1,18 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Validation\Validator;
 use Illuminate\Routing\Controller;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Users;
 use App\Models\Notifikasi;
-use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
@@ -51,7 +46,7 @@ class UsersController extends Controller
 
         // upload image
         $image = $request->file('ktp');
-        $image->storeAs('storage/public/users/', $image->hashName());
+        $image->storeAs('public/users', $image->hashName());
 
         // create post
         users::create([
@@ -69,8 +64,8 @@ class UsersController extends Controller
         ]);
 
         // create notification
-        notifikasi::create([
-            'id_user'   => $request->id_category,
+        Notifikasi::create([
+            'id_user'   => $request->name,
             'aksi'      => 'Menambah User',
             'date'      => now()
         ]);
@@ -100,7 +95,7 @@ class UsersController extends Controller
             'norek'=>'required',
             'saldo'=>'required',
             'bank'=>'required',
-            'password'=>Hash::make($request->password)
+            'password'=>'required'
         ]);
 
         // get post by id
@@ -110,11 +105,10 @@ class UsersController extends Controller
         if ($request->hasFile('ktp')) {
             //upload new image
             $image = $request->file('ktp');
-            $image->storeAs('storage/public/users/', $image->hashName());
+            $image->storeAs('public/users/', $image->hashName());
 
             // delete old image
-            Storage::delete('storage/public/users/'. $user->image);
-
+            Storage::delete('public/users/'. $user->image);
             // update post with new image
             $user->update([
               'name'=>$request->name,
@@ -156,7 +150,7 @@ class UsersController extends Controller
         $user = users::findOrFail($id);
 
         // delete image
-        Storage::delete('storage/public/users/'. $user->image);
+        Storage::delete('public/users/'. $user->image);
 
         // delete post
         $user->delete();

@@ -172,7 +172,7 @@
                             </th>
 
                             <th scope="col" width="">{{ $post->id_category }}</th>
-                            <th scope="col" width="20%"><img src="{{ asset('storage/public/posts/'.$post->image) }}" width="20%"></th>
+                            <th scope="col" width="20%"><img src="{{ asset('/storage/public/posts/'.$post->image) }}" width="20%"></th>
                             <th scope="col" width="20%">{{ $post->title }}</th>
                             <th scope="col" width="">{{ $post->author }}</th>
 
