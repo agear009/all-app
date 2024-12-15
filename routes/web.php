@@ -26,5 +26,10 @@ Route::resource('/admin',\App\Http\Controllers\UsersController::class);
 Route::resource('/user',\App\Http\Controllers\UsersController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);
 Route::resource('/produk',\App\Http\Controllers\ProdukController::class);
+Route::resource('/asetkantor',\App\Http\Controllers\AsetKantorController::class);
+Route::resource('/berita',\App\Http\Controllers\BeritaController::class);
+Route::resource('/kategori',\App\Http\Controllers\KategoriController::class);
+Route::resource('/notification',\App\Http\Controllers\NotificationController::class);
+Route::resource('/gudang',\App\Http\Controllers\GudangController::class);
 
 });

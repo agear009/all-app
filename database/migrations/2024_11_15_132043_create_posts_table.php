@@ -20,7 +20,6 @@ return new class extends Migration
             $table->text('content');
             $table->string('author');
             $table->text('source');
-
             $table->timestamps();
         });
     }

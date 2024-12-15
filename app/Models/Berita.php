@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AsetKantor extends Model
+class Berita extends Model
 {
-    /** @use HasFactory<\Database\Factories\AsetKantorFactory> */
+    /** @use HasFactory<\Database\Factories\BeritaFactory> */
     use HasFactory;
     protected $fillable = [
         'category',
         'image',
-        'name',
-        'deskripsi',
-        'pemilik',
-        'harga'
+        'title',
+        'content',
+        'author',
+        'source'
         ];
 }

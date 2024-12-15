@@ -3,25 +3,25 @@
       <nav class="pull-left">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="http://www.themekita.com">
-              ThemeKita
+            <a class="nav-link" href="#">
+
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Help </a>
+            <a class="nav-link" href="#">  </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Licenses </a>
+            <a class="nav-link" href="#">  </a>
           </li>
         </ul>
       </nav>
       <div class="copyright">
-        2024, made with <i class="fa fa-heart heart text-danger"></i> by
-        <a href="http://www.themekita.com">ThemeKita</a>
+        2024, Pembaruan oleh<i class="fa fa-heart heart text-danger"></i>
+        <a href="www.galih09.my.id">IT Develpoer SDG</a>
       </div>
       <div>
-        Distributed by
-        <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
+        Diedit
+        <a target="_blank" href="#">Saamparan Digital Group</a>.
       </div>
     </div>
   </footer>
@@ -243,7 +243,7 @@
 <script src="../../assets/admin/assets/js/plugin/datatables/datatables.min.js"></script>
 
 <!-- Bootstrap Notify -->
-<script src="../../assets/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<!-- <script src="../../assets/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>-->
 
 <!-- jQuery Vector Maps -->
 <script src="../../assets/admin/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>

@@ -108,7 +108,7 @@ class UsersController extends Controller
             $image->storeAs('public/users/', $image->hashName());
 
             // delete old image
-            Storage::delete('public/users/'. $user->image);
+            Storage::delete('public/users/'. $user->ktp);
             // update post with new image
             $user->update([
               'name'=>$request->name,
@@ -150,7 +150,7 @@ class UsersController extends Controller
         $user = users::findOrFail($id);
 
         // delete image
-        Storage::delete('public/users/'. $user->image);
+        Storage::delete('public/users/'. $user->ktp);
 
         // delete post
         $user->delete();
