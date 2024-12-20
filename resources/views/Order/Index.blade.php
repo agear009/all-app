@@ -1,4 +1,3 @@
-
 @extends('Layouts.MainAdmin')
 
 @section('Container')
@@ -14,13 +13,13 @@
               class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
             >
               <div>
-                <h3 class="fw-bold mb-3">Postingan</h3>
-                <h6 class="op-7 mb-2">Silahkan tambah postingan</h6>
+                <h3 class="fw-bold mb-3">Order</h3>
+                <h6 class="op-7 mb-2">Silahkan tambah order</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('post.create') }}" class="btn btn-primary btn-round">Tambah Postingan</a>
+                <a href="{{ route('order.create') }}" class="btn btn-primary btn-round">Tambah Order</a>
               </div>
             </div>
             <div class="row">
@@ -118,7 +117,7 @@
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Masukan Data Postingan</div>
+                      <div class="card-title">Daftar order</div>
                       <div class="card-tools">
                         <div class="dropdown">
                           <button
@@ -143,85 +142,60 @@
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
-
-
                       <!-- Projects table -->
-                      <form action="{{ route('asetkantor.store') }}" method="POST"  enctype="multipart/form-data" >
-                        @csrf
-
-                        <table class="table align-items-center mb-0">
+                      <table class="table align-items-center mb-0">
                         <thead class="thead-light">
                           <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" class="text-end"></th>
+                            <th scope="col">NO</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Gambar</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col" class="text-end">Menu</th>
 
 
                           </tr>
                         </thead>
+                    </tbody>
+                </table>
 
+                        @forelse($order as $order)
+                        <table class="table align-items-center mb-0">
                         <tbody>
+
                           <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Category</label>
-                                <select class="form-control" id="category" name="category" aria-describedby="category_id" required >
-                                    <option name="category" value="Aktiva_Tetap">Aktiva Tetap</option>
-                                    <option name="category" value="Aktiva_Bergerak">Aktiva Bergerak</option>
-
-                                </select>
-
+                            <th scope="row">
+                              <button class="btn btn-icon btn-round btn-success btn-sm me-2">
+                                <i class="fa fa-check"></i>
+                              </button>
+                              {{ $no++ }}
                             </th>
+
+                            <th scope="col" width="">{{ $order->category }}</th>
+                            <th scope="col" width="20%"><img src="{{ asset('/storage/public/order/'.$order->image) }}" width="20%"></th>
+                            <th scope="col" width="20%">{{ $order->name }}</th>
+                            <th scope="col" width="">{{ $order->price }}</th>
+
+                            <td class="text-end">
+
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('order.destroy', $order->id) }}" method="POST">
+                                    <a href="{{ route('order.edit', $order->id) }}" class="btn btn-sm btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <span class="badge badge-success">Edit</span></a>
+                                    </a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn"> <span class="badge badge-success">Hapus</span></button>
+                                </form>
+
+
+                            </td>
                           </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                            <label for="exampleInputname1" class="form-label">Gambar (bila ada)</label>
-                            <input type="file" class="form-control" id="name" name="image" aria-describedby="Cover" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Nama Aktiva</label>
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="name Category" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Deskripsi</label>
-                                <textarea id="myTextarea" name="deskripsi"></textarea>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Pemilik</label>
-                                <input type="text" class="form-control" id="name" name="pemilik" aria-describedby=" author name" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Harga</label>
-                                <input type="text" class="form-control" id="producer" name="harga" aria-describedby="source" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-
-                            </th>
-                          </tr>
-
-
                         </tbody>
                       </table>
-
-                    </form>
+                      @empty
+                      <div class="alert alert-danger">
+                          Data tidak ditemukan.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -229,5 +203,7 @@
             </div>
           </div>
         </div>
-
+        @endforelse
 @endsection
+
+

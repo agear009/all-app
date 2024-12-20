@@ -169,18 +169,13 @@
                                     <label for="exampleInputname1" class="form-label">Category</label>
                                     <select class="form-control" id="id_category" name="category" aria-describedby="category" required >
                                         <option name="category" value="{{ $produk->category }}">{{ $produk->category }}</option>
-                                        <option name="category" value="Teknologi">Teknologi</option>
-                                        <option name="category" value="Edukasi">Edukasi</option>
-                                        <option name="category" value="Politik">Politik</option>
-                                        <option name="category" value="Olah_Raga">Olah Raga</option>
-                                        <option name="category" value="Wisata">Wisata</option>
-                                        <option name="category" value="Manca_Negara">Manca Negara</option>
-                                        <option name="category" value="Kesehatan">Kesehatan</option>
-                                        <option name="category" value="Gaya Hidup">Gaya Hidup</option>
-                                        <option name="category" value="Kuliner">Kuliner</option>
-                                        <option name="category" value="Otomotif">Otomotif</option>
-                                        <option name="category" value="Sejarah">Sejarah</option>
-                                        <option name="category" value="Film">Film</option>
+                                        @forelse($category as $category)
+                                        <option name="category" value="{{ $category->name }}">{{ $category->name }}</option>
+                                        @empty
+                                        <div class="alert alert-danger">
+                                            Data tidak ditemukan.
+                                        </div>
+                                        @endforelse
 
                                     </select>
 

@@ -14,13 +14,13 @@
               class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
             >
               <div>
-                <h3 class="fw-bold mb-3">Postingan</h3>
-                <h6 class="op-7 mb-2">Silahkan tambah postingan</h6>
+                <h3 class="fw-bold mb-3">Order</h3>
+                <h6 class="op-7 mb-2">Silahkan tambah Order</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('post.create') }}" class="btn btn-primary btn-round">Tambah Postingan</a>
+                <a href="{{ route('order.create') }}" class="btn btn-primary btn-round">Tambah Order</a>
               </div>
             </div>
             <div class="row">
@@ -118,7 +118,7 @@
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Masukan Data Postingan</div>
+                      <div class="card-title">Masukan Data order</div>
                       <div class="card-tools">
                         <div class="dropdown">
                           <button
@@ -146,80 +146,100 @@
 
 
                       <!-- Projects table -->
-                      <form action="{{ route('asetkantor.store') }}" method="POST"  enctype="multipart/form-data" >
+                      <form action="{{ route('order.update', $order->id) }}" method="POST"  enctype="multipart/form-data" >
                         @csrf
-
+                        @method('PUT')
                         <table class="table align-items-center mb-0">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" class="text-end"></th>
+                            <thead class="thead-light">
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end"></th>
 
 
-                          </tr>
-                        </thead>
+                              </tr>
+                            </thead>
 
-                        <tbody>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Category</label>
-                                <select class="form-control" id="category" name="category" aria-describedby="category_id" required >
-                                    <option name="category" value="Aktiva_Tetap">Aktiva Tetap</option>
-                                    <option name="category" value="Aktiva_Bergerak">Aktiva Bergerak</option>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" colspan="6">
+                                        <label for="exampleInputname1" class="form-label">Produk</label>
+                                        <select class="form-control" id="id_category" name="id_produk" aria-describedby="category" required >
+                                            <option name="id_produk" value="{{ $order->id_produk }}">{{ $order->id_produk }}</option>
+                                            @forelse($produk as $produk)
+                                            <option name="id_produk" value="{{ $produk->id }}">{{ $produk->name }}</option>
+                                            @empty
+                                            <div class="alert alert-danger">
+                                                Data tidak ditemukan.
+                                            </div>
+                                            @endforelse
 
-                                </select>
+                                        </select>
 
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                            <label for="exampleInputname1" class="form-label">Gambar (bila ada)</label>
-                            <input type="file" class="form-control" id="name" name="image" aria-describedby="Cover" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Nama Aktiva</label>
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="name Category" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Deskripsi</label>
-                                <textarea id="myTextarea" name="deskripsi"></textarea>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Pemilik</label>
-                                <input type="text" class="form-control" id="name" name="pemilik" aria-describedby=" author name" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <label for="exampleInputname1" class="form-label">Harga</label>
-                                <input type="text" class="form-control" id="producer" name="harga" aria-describedby="source" required>
-
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="6">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-
-                            </th>
-                          </tr>
+                                    </th>
+                                  </tr>
 
 
-                        </tbody>
-                      </table>
+
+                                  <tr>
+                                    <th scope="row" colspan="6">
+                                    <label for="exampleInputname1" class="form-label">Pemesan</label>
+                                    <select class="form-control" id="id_category" name="id_user" aria-describedby="category" required >
+                                        <option name="id_produk" value="{{ $order->id_user }}">{{ $order->id_user }}</option>
+                                        @forelse($user as $user)
+                                        <option name="id_produk" value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @empty
+                                        <div class="alert alert-danger">
+                                            Data tidak ditemukan.
+                                        </div>
+                                        @endforelse
+
+                                    </select>
+
+                                    </th>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row" colspan="6">
+                                        <label for="exampleInputname1" class="form-label">Jumlah</label>
+                                        <input type="text" class="form-control" id="name" name="jumlah" aria-describedby="name Category" value="{{ $order->jumlah }}" required>
+
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" colspan="6">
+                                        <label for="exampleInputname1" class="form-label">Keterangan</label>
+                                        <textarea id="myTextarea" name="keterangan">{{ $order->keterangan }}</textarea>
+
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" colspan="6">
+                                        <label for="exampleInputname1" class="form-label">Status</label>
+                                        <select class="form-control" id="id_category" name="status" aria-describedby="category" required >
+                                            <option name="status" value="Menunggu_Pembayaran">Menunggu Pembayaran</option>
+                                            <option name="status" value="Diproses">Diproses</option>
+                                            <option name="status" value="Selesai">Selesai</option>
+
+
+                                        </select>
+
+                                    </th>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row" colspan="6">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                                    </th>
+                                  </tr>
+
+
+                            </tbody>
+                          </table>
 
                     </form>
                     </div>
@@ -231,3 +251,5 @@
         </div>
 
 @endsection
+
+

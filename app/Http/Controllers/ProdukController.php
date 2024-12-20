@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\Category;
 use App\Models\Notifikasi;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\RedirectResponse;
@@ -16,11 +17,14 @@ class ProdukController extends Controller
         $no++;
 
         $produk=Produk::all();
-        return View('Product.Index',["title"=>"Control Panel","active"=>"Product"],compact('produk','no'));
+        $category=Category::all();
+        return View('Product.Index',["title"=>"Control Panel","active"=>"Product"],compact('produk','category','no'));
     }
     public function create()
     {
-        return view('Product.Create',["title"=>"Produk","active"=>"Produk"]);
+        $produk=Produk::all();
+        $category=Category::all();
+        return view('Product.Create',["title"=>"Produk","active"=>"Produk"],compact('produk','category'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -66,7 +70,8 @@ class ProdukController extends Controller
     public function edit(string $id)
     {
         $produk=Produk::findOrFail($id);
-        return view('Product.Edit',["title"=>"Produk","active"=>"Edit"],compact('produk'));
+        $category=category::all();
+        return view('Product.Edit',["title"=>"Produk","active"=>"Edit"],compact('produk','category'));
     }
 
     public function update(Request $request, $id)

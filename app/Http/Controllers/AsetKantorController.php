@@ -61,7 +61,7 @@ class AsetKantorController extends Controller
 
         // create notification
         notifikasi::create([
-            'id_user'   => $request->category,
+            'id_user'   => $request->id_user,
             'aksi'      => 'Menambah Positingan',
             'date'      => now()
         ]);

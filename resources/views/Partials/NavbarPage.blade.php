@@ -18,8 +18,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="/produk" aria-label="Produk">
+          <a class="nav-link fs-5" href="/produkpage" aria-label="Produk">
             Produk
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="/beritapage" aria-label="Produk">
+            Berita
           </a>
         </li>
         <li class="nav-item">

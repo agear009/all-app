@@ -12,7 +12,8 @@ Route::get('/index', function () {
 });
 
 Route::get('/',[PageController::class,'index']);
-Route::get('/produk',[PageController::class,'produk']);
+Route::get('/produkpage',[PageController::class,'produk']);
+Route::get('/beritapage',[PageController::class,'berita']);
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login-check', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -31,5 +32,6 @@ Route::resource('/berita',\App\Http\Controllers\BeritaController::class);
 Route::resource('/kategori',\App\Http\Controllers\KategoriController::class);
 Route::resource('/notification',\App\Http\Controllers\NotificationController::class);
 Route::resource('/gudang',\App\Http\Controllers\GudangController::class);
+Route::resource('/order',\App\Http\Controllers\OrderController::class);
 
 });

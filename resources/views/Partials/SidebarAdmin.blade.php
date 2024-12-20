@@ -85,6 +85,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/order">
+                        <span class="sub-item">Order</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/notification">
                         <span class="sub-item">Notifikasi</span>
                         </a>
