@@ -206,8 +206,9 @@
 
                                     <select class="form-control" id="level_user" name="level" required>
 
+                                    <option class="form-control" id="level_user" name="level" value=""></option>
                                     <option class="form-control" id="level_user" name="level" value="user">User</option>
-                                    <option class="form-control" id="level_user" name="level" value="pekerja">pekerja</option>
+                                    <option class="form-control" id="level_user" name="level" value="pekerja">Pekerja</option>
                                     <option class="form-control" id="level_user" name="level" value="admin">Admin</option>
                                     </select>
                                 </th>

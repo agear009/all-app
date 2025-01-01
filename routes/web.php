@@ -23,7 +23,7 @@ Route::resource('/register',\App\Http\Controllers\RegisterController::class);
 
 Route::group(["middleware"=>["auth"]],function(){
 
-Route::resource('/admin',\App\Http\Controllers\UsersController::class);
+Route::resource('/admin',\App\Http\Controllers\AdminController::class);
 Route::resource('/user',\App\Http\Controllers\UsersController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);
 Route::resource('/produk',\App\Http\Controllers\ProdukController::class);

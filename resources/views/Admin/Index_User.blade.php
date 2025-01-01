@@ -1,3 +1,4 @@
+
 @extends('Layouts.MainAdmin')
 
 @section('Container')
@@ -13,12 +14,13 @@
               class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
             >
               <div>
-                <h3 class="fw-bold mb-3">Data Diri</h3>
-                <h6 class="op-7 mb-2">Silahkan lengkapi apabila belum lengkap</h6>
+                <h3 class="fw-bold mb-3">User</h3>
+                <h6 class="op-7 mb-2">Silahkan  isi data user yang belum terisi</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
 
-                <a href="#" class="btn btn-primary btn-round">Update data anda</a>
+
+                <a href="{{ route('user.create') }}" class="btn btn-primary btn-round">Tambah User</a>
               </div>
             </div>
             <div class="row">
@@ -116,7 +118,7 @@
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Daftar Postingan</div>
+                      <div class="card-title">Masukan Data User</div>
                       <div class="card-tools">
                         <div class="dropdown">
                           <button
@@ -141,8 +143,9 @@
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
-                      <!-- Projects table -->
 
+
+                      <!-- Projects table -->
                       <form action="{{ route('user.update', $user->id) }}" method="POST"  enctype="multipart/form-data" >
                         @csrf
                         @method('PUT')
@@ -203,8 +206,13 @@
                                   <tr>
                                     <th scope="row" colspan="6">
                                     <label for="exampleInputname1" class="form-label">Level</label>
-                                    <input type="text" class="form-control" id="name" name="nohp" aria-describedby="Cover" value="{{ $user->level }}">
 
+                                        <select class="form-control" id="level_user" name="level" required>
+                                        <option class="form-control" id="level_user" name="level" value="{{ $user->level }}">{{ $user->level }}</option>
+                                        <option class="form-control" id="level_user" name="level" value="user">User</option>
+                                        <option class="form-control" id="level_user" name="level" value="pekerja">pekerja</option>
+                                        <option class="form-control" id="level_user" name="level" value="admin">Admin</option>
+                                        </select>
                                     </th>
                                   </tr>
 
@@ -400,8 +408,6 @@
                           </table>
 
                     </form>
-
-
                     </div>
                   </div>
                 </div>
@@ -411,3 +417,5 @@
         </div>
 
 @endsection
+
+
