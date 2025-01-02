@@ -20,7 +20,15 @@ class AdminController extends Controller
         $id=Auth::user()->id;
         //$id=auth()->user()->id;
         $users = users::findOrFail($id);
-        dd($users);
-        return view('Admin.Index', ["title" => "Control Panel", "active" => "Home"], compact('users','no'));
+        //dd($users);
+        if ($users->Level== Null || $users->level =='' ){
+            $user = users::findOrFail($id);
+            return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user','no'));
+
+        }
+        else{
+            $user = users::findOrFail($id);
+        return view('Admin.Index', ["title" => "Control Panel", "active" => "Home"], compact('user','no'));
+        }
     }
 }

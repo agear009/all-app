@@ -99,6 +99,7 @@ class UsersController extends Controller
         ]);
 
         // get post by id
+        dd($id);
         $user = users::findOrFail($id);
 
         // check if new image is uploaded
@@ -138,9 +139,21 @@ class UsersController extends Controller
                 'password'=>Hash::make($request->password)
             ]);
         }
+        if ($user->Level== Null || $user->level =='' ){
+            $user = users::findOrFail($id);
+            return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user','no'));
 
-        //redirect to post index
-        return redirect()->route('user.index')->with(['success' => 'Data Berhasil Diubah!']);
+        }
+        elseif($user->level =='User')
+        {return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user','no'));}
+
+        else{
+           //$user = users::findOrFail($id);
+          //redirect to post index
+          return redirect()->route('user.index')->with(['success' => 'Data Berhasil Diubah!']);
+        }
+
+
     }
 
 

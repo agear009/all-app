@@ -20,7 +20,7 @@
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('user.create') }}" class="btn btn-primary btn-round">Tambah User</a>
+                <a href="{{ route('order.create') }}" class="btn btn-primary btn-round">Tambah Pesanan</a>
               </div>
             </div>
             <div class="row">
@@ -205,49 +205,16 @@
 
                                   <tr>
                                     <th scope="row" colspan="6">
-                                    <label for="exampleInputname1" class="form-label">Level</label>
-
-                                        <select class="form-control" id="level_user" name="level" required>
-                                        <option class="form-control" id="level_user" name="level" value="{{ $user->level }}">{{ $user->level }}</option>
-                                        <option class="form-control" id="level_user" name="level" value="user">User</option>
-                                        <option class="form-control" id="level_user" name="level" value="pekerja">pekerja</option>
-                                        <option class="form-control" id="level_user" name="level" value="admin">Admin</option>
-                                        </select>
-                                    </th>
-                                  </tr>
-
-                                  <tr>
-                                    <th scope="row" colspan="6">
-                                    <label for="exampleInputname1" class="form-label">Status</label>
-
-                                    <select class="form-control" id="level_user" name="status" required>
-                                    <option class="form-control" id="level_user" name="status" value="{{ $user->status }}">{{ $user->status }}</option>
-                                    <option class="form-control" id="level_user" name="status" value="menunggu_konfirmasi">Menunggu Konfirmasi</option>
-                                    <option class="form-control" id="level_user" name="status" value="aktif">Aktif</option>
-                                    <option class="form-control" id="level_user" name="status" value="tidak_aktif">Tidak Aktif</option>
-                                    </select>
-
-                                    </th>
-                                  </tr>
-
-                                  <tr>
-                                    <th scope="row" colspan="6">
-                                    <label for="exampleInputname1" class="form-label">ID Transaksi</label>
-                                    <input type="text" class="form-control" id="name" name="id_transaksi" aria-describedby="Cover" value="{{ $user->id_transaksi }}" required>
-                                    </th>
+                                        <input type="hidden" class="form-control" id="name" name="level" aria-describedby="Cover" value="{{ $user->level }}" >
+                                        <input type="hidden" class="form-control" id="status" name="status" aria-describedby="Cover" value="menunggu_konfirmasi" >
+                                        <input type="hidden" class="form-control" id="status" name="id_transaksi" aria-describedby="Cover" value="{{ $user->id_transaksi }}" >
+                                        <input type="hidden" class="form-control" id="saldo" name="saldo" aria-describedby="Cover" value="{{ $user->saldo }}" >
                                   </tr>
 
                                   <tr>
                                     <th scope="row" colspan="6">
                                     <label for="exampleInputname1" class="form-label">No Rekening</label>
                                     <input type="text" class="form-control" id="name" name="norek" aria-describedby="Cover" value="{{ $user->norek }}" required>
-                                    </th>
-                                  </tr>
-
-                                  <tr>
-                                    <th scope="row" colspan="6">
-                                    <label for="exampleInputname1" class="form-label">Saldo</label>
-                                    <input type="text" class="form-control" id="rupiah" name="saldo" aria-describedby="Cover" value="{{ $user->saldo }}"required>
                                     </th>
                                   </tr>
 
