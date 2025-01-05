@@ -99,9 +99,12 @@ class UsersController extends Controller
         ]);
 
         // get post by id
-        dd($id);
+        //dd($id);
         $user = users::findOrFail($id);
 
+        if( $user->password = $request->password){
+
+        //dd($user);
         // check if new image is uploaded
         if ($request->hasFile('ktp')) {
             //upload new image
@@ -121,8 +124,7 @@ class UsersController extends Controller
                     'id_transaksi'=>$request->id_transaksi,
                     'norek'=>$request->norek,
                     'saldo'=>$request->saldo,
-                    'bank'=>$request->bank,
-                    'password'=>Hash::make($request->password)
+                    'bank'=>$request->bank
             ]);
         } else {
             // update post without image
@@ -135,17 +137,72 @@ class UsersController extends Controller
                 'id_transaksi'=>$request->id_transaksi,
                 'norek'=>$request->norek,
                 'saldo'=>$request->saldo,
-                'bank'=>$request->bank,
-                'password'=>Hash::make($request->password)
+                'bank'=>$request->bank
             ]);
-        }
-        if ($user->Level== Null || $user->level =='' ){
-            $user = users::findOrFail($id);
-            return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user','no'));
+             }
 
         }
+
+        else{
+            $password=Hash::make($request->password);
+            dd($password);
+             // check if new image is uploaded
+                if ($request->hasFile('ktp')) {
+                    //upload new image
+                    $image = $request->file('ktp');
+                    $image->storeAs('public/users/', $image->hashName());
+
+                    // delete old image
+                    Storage::delete('public/users/'. $user->ktp);
+                    // update post with new image
+                    $user->update([
+                    'name'=>$request->name,
+                            'email'=>$request->email,
+                            'ktp'=>$image->hashName(),
+                            'nohp'=>$request->nohp,
+                            'level'=>$request->level,
+                            'status'=>$request->status,
+                            'id_transaksi'=>$request->id_transaksi,
+                            'norek'=>$request->norek,
+                            'saldo'=>$request->saldo,
+                            'bank'=>$request->bank,
+                            'password'=>Hash::make($request->password)
+                    ]);
+                } else {
+
+                    $password=Hash::make($request->password);
+                    dd($password);
+                    // update post without image
+                    $user->update([
+                        'name'=>$request->name,
+                        'email'=>$request->email,
+                        'nohp'=>$request->nohp,
+                        'level'=>$request->level,
+                        'status'=>$request->status,
+                        'id_transaksi'=>$request->id_transaksi,
+                        'norek'=>$request->norek,
+                        'saldo'=>$request->saldo,
+                        'bank'=>$request->bank,
+                        'password'=>Hash::make($request->password)
+                    ]);
+                }
+
+        }
+
+        if ($user->Level== Null || $user->level =='' ){
+            $user = users::findOrFail($id);
+            return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user'));
+
+        }
+        elseif($user->level =='Belum_Ada')
+        {
+            $user = users::findOrFail($id);
+            return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user'));}
+
         elseif($user->level =='User')
-        {return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user','no'));}
+        {
+            $user = users::findOrFail($id);
+            return view('Admin.Index_User', ["title" => "Control Panel", "active" => "Home"], compact('user'));}
 
         else{
            //$user = users::findOrFail($id);

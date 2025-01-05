@@ -31,6 +31,7 @@ class OrderController extends Controller
         return view('Order.Create',["title"=>"order","active"=>"order"],compact('order','produk','user'));
     }
 
+
     public function store(Request $request): RedirectResponse
     {
 

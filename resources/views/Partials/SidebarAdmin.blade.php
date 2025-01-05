@@ -190,6 +190,47 @@
 										<span class="sub-item">Pengguna</span>
 									</a>
 								</li> --}}
+                    	@elseif (auth()->user()->level === 'Belum_Ada')
+                        <li>
+                            <a href="">
+                                <span class="sub-item">Anda belum mempunyai menu, kontak admin untuk menu</span>
+                            </a>
+                        </li>
+								{{-- <li>
+									<a href="{{ route('kategori.index') }}">
+										<span class="sub-item">Kategori</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ route('produk.index') }}">
+										<span class="sub-item">Produk</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ route('order.index') }}">
+										<span class="sub-item">Order</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ route('notification.index') }}">
+										<span class="sub-item">Notifikasi</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ route('asetkantor.index') }}">
+										<span class="sub-item">Aset Kantor</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ route('gudang.index') }}">
+										<span class="sub-item">Gudang</span>
+									</a>
+								</li>
+								<li>
+									<a href="{{ route('user.index') }}">
+										<span class="sub-item">Pengguna</span>
+									</a>
+								</li> --}}
 							@else
 								 <li>
 									<a href="">

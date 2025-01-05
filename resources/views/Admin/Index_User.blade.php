@@ -20,7 +20,7 @@
               <div class="ms-md-auto py-2 py-md-0">
 
 
-                <a href="{{ route('order.create') }}" class="btn btn-primary btn-round">Tambah Pesanan</a>
+                <a href="#" class="btn btn-primary btn-round">Tambah Pesanan</a>
               </div>
             </div>
             <div class="row">
@@ -174,7 +174,8 @@
                                 <tr>
                                     <th scope="row" colspan="6">
                                         <label for="exampleInputname1" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="name" name="email" aria-describedby="name Category" value="{{ $user->email }}" required>
+                                        <p>{{ $user->email }}</p>
+                                        <input type="hidden" class="form-control" id="name" name="email" aria-describedby="name Category" value="{{ $user->email }}" required>
 
                                     </th>
                                   </tr>
@@ -205,10 +206,10 @@
 
                                   <tr>
                                     <th scope="row" colspan="6">
-                                        <input type="hidden" class="form-control" id="name" name="level" aria-describedby="Cover" value="{{ $user->level }}" >
+                                        <input type="hidden" class="form-control" id="name" name="level" aria-describedby="Cover" value="Belum_Ada" >
                                         <input type="hidden" class="form-control" id="status" name="status" aria-describedby="Cover" value="menunggu_konfirmasi" >
-                                        <input type="hidden" class="form-control" id="status" name="id_transaksi" aria-describedby="Cover" value="{{ $user->id_transaksi }}" >
-                                        <input type="hidden" class="form-control" id="saldo" name="saldo" aria-describedby="Cover" value="{{ $user->saldo }}" >
+                                        <input type="hidden" class="form-control" id="status" name="id_transaksi" aria-describedby="Cover" value="Tidak ada Transaksi" >
+                                        <input type="hidden" class="form-control" id="saldo" name="saldo" aria-describedby="Cover" value="0" >
                                   </tr>
 
                                   <tr>

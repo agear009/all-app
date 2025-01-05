@@ -5,6 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RegisterController;
 
 Route::get('/index', function () {
@@ -23,6 +24,7 @@ Route::resource('/register',\App\Http\Controllers\RegisterController::class);
 
 Route::group(["middleware"=>["auth"]],function(){
 
+
 Route::resource('/admin',\App\Http\Controllers\AdminController::class);
 Route::resource('/user',\App\Http\Controllers\UsersController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);
@@ -33,5 +35,11 @@ Route::resource('/kategori',\App\Http\Controllers\KategoriController::class);
 Route::resource('/notification',\App\Http\Controllers\NotificationController::class);
 Route::resource('/gudang',\App\Http\Controllers\GudangController::class);
 Route::resource('/order',\App\Http\Controllers\OrderController::class);
+Route::resource('/order_user',PageController::class,[
+                'only' => ['order'], // Menentukan metode yang diinginkan
+                'parameters' => ['posts' => 'slug'] // Mengubah nama parameter
+]);
+
+
 
 });
